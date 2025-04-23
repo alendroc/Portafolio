@@ -1,0 +1,37 @@
+{
+    "en": {
+        "nav_about": "About me",
+        "nav_projects": "Projects",
+        "nav_contact": "Contact",
+      "name": "Jose Alejandro Chaves Ramirez",
+      "title": "Systems Engineer",
+      "tag1": "Ready to work",
+      "tag2": "Availability to move",
+      "description": "I am a systems engineer, focused on the front-end area but always willing to develop back-end and databases.",
+      "section_technologies": "Technologies",
+      "section_experience": "Experience",
+      "section_projects": "Projects",
+      "exp_ponderosa_title": "Ponderosa Adventure Park",
+      "exp_ponderosa_text": "At Ponderosa Adventure Park, I worked in sales and customer service. Thanks to this experience, I was able to develop skills in teamwork, leadership, and customer service.",
+      "exp_exportpack_title": "Export Pack",
+      "exp_exportpack_text": "I worked for a year and six months with the company Exportpack, developing software for an administrative system and controlling crops and inventory. I also helped with the implementation of agile methodologies such as Scrum."
+    },
+    "es": {
+      "nav_projects": "Proyectos",
+      "nav_about": "Sobre mí",
+      "nav_contact": "Contacto",
+      "name": "Jose Alejandro Chaves Ramirez",
+      "title": "Ingeniero en Sistemas",
+      "tag1": "Listo para trabajar",
+      "tag2": "Disponibilidad para trasladarse",
+      "description": "Soy ingeniero en sistemas, enfocado en el área de frontend pero siempre dispuesto a desarrollar backend y bases de datos.",
+      "section_technologies": "Tecnologías",
+      "section_experience": "Experiencia",
+      "section_projects": "Proyectos",
+      "exp_ponderosa_title": "Ponderosa Adventure Park",
+      "exp_ponderosa_text": "En Ponderosa Adventure Park trabajé en ventas y servicio al cliente. Gracias a esta experiencia, desarrollé habilidades de trabajo en equipo, liderazgo y atención al cliente.",
+      "exp_exportpack_title": "Export Pack",
+      "exp_exportpack_text": "Trabajé durante un año y seis meses con la empresa Exportpack, desarrollando software para un sistema administrativo y controlando cultivos e inventario. También ayudé con la implementación de metodologías ágiles como Scrum."
+    
+    }
+  }

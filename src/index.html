@@ -14,48 +14,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
 </head>
     <body>
+      <div class="navbar-wrapper">
+      <div class="container-header">
+        <nav class="shared-width content-navegation">
+          <div class="logo">
+            <a href="#home">Alejandro Chaves</a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#about" id="nav_about">About me</a></li>
+            <li><a href="#projects" id="nav_projects">Projects</a></li>
+            <li><a href="#contact" id="nav_contact">Contact</a></li>
+            <select id="languageSwitcher">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+            </select>
+          </ul>
+          <div class="toggle-bottom">
+            <label class="burger"  id="burgerToggle" for="burger">
+              <input type="checkbox" id="burger" />
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+      <div class="dropdown content-navegation" id="dropdownMenu">
+        <li class="top"><a href="#about" id="drop_about">About me</a></li>
+        <li><a href="#projects" id="drop_projects">Projects</a></li>
+        <li class="bottom"><a href="#contact" id="drop_contact">Contact</a></li>
+      </div>
+    </div>
         <header>
-            <div class="container-header">
-              <nav class="shared-width content-navegation">
-                <div class="logo">
-                  <a href="#home">Alejandro Chaves</a>
-                </div>
-                <ul class="nav-links">
-                  <li><a href="#about">About me</a></li>
-                  <li><a href="#projects">Projects</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="toggle-bottom">
-                  <label class="burger"  id="burgerToggle" for="burger">
-                    <input type="checkbox" id="burger" />
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </label>
-                </div>
-              </nav>
-            </div>
-            <div class="dropdown content-navegation"  id="dropdownMenu">
-              <li class="top"><a href="#about">About me</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li class="bottom"><a href="#contact">Contact</a></li>
-            </div>
-            
-
              <div class="presentation  ">
                     <div class="card shared-width">
                         <div class="img-conten">
-
                         </div>
                         <div class="card-inf">
-                            <p class="cero-mg" style="font-size: 12px;">Jose Alejandro Chaves Ramirez</p>
-                            <h2 class="cero-mg">Systems Engineer</h2>
-                            <div class="tags">
-                               <span><p class="cero-mg">Ready to work</p></span>
-                               <span><p class="cero-mg">Availability to move</p></span> 
-                            </div>
-                            
-                            <p style="font-size: 12px;">I am a systems engineer, focused on the front-end area but always willing to develop back-end and databases.</p>
+                          <p id="name" class="cero-mg" style="font-size: 12px;"></p>
+                          <h2 id="title" class="cero-mg"></h2>
+                        
+                          <div class="tags">
+                            <span><p id="tag1" class="cero-mg"></p></span>
+                            <span><p id="tag2" class="cero-mg"></p></span>
+                          </div>
+                        
+                          <p id="description" style="font-size: 14px;"></p>
                         </div>
                     </div>
             </div>
@@ -63,7 +67,7 @@
         <main>
           <div class="content-main">
            <div class="tecnologis-content">
-            <h3 class="subtittle">Tecnologies</h3>
+            <h3 class="subtittle" id="section_technologies">Tecnologies</h3>
             <ul class="tecnologis-list">
               <li><i class="fa-brands fa-html5 html-icon"></i> HTML</li>
               <li><i class="fa-brands fa-js js-icon"></i> JavaScript</li>
@@ -76,35 +80,56 @@
             </ul>
            </div>
            <div class="experience-content tecnologis-content">
-            <h3 class="subtittle">Experience</h3>
-            <div>
-              <div class="icono"></div>
-              <div class="proyect-contenten">
-                <h4></h4>
-                <p></p>
-              </div>
+            <h3 class="subtittle" id="section_experience">Experience</h3>
+              <div class="Experience-contenten">
+                <div class="tittle-company">
+                  <div class="icono"><i class="fa-solid fa-hippo"></i></div>
+                  <h4 class="title-experience cero-mg" id="exp_ponderosa_title">Ponderosa Adventure Park</h4>
+                </div>
+                <p class="cero-mg"  id="exp_ponderosa_text">
+                  At Ponderosa Adventure Park, I worked in sales and customer service. Thanks to this experience, I was able to develop skills in teamwork, leadership, and customer service.
+                </p>
             </div>
+              <div class="Experience-contenten">
+                <div class="tittle-company">
+                  <div class="icono">
+                    <i class="fa-solid fa-seedling"></i>
+                  </div>
+                  <h4 class="title-experience cero-mg"  id="exp_exportpack_title" >Export PAck</h4>
+                </div>
+                  <p class="cero-mg" id="exp_exportpack_text">
+                  I worked for a year and six months with the company Exportpack, developing software for an administrative system and controlling crops and inventory. I also helped with the implementation of agile methodologies such as Scrum.
+                </p>
+            </div>
+          </div>
+
+          <div class="experience-content tecnologis-content">
+            <h3 class="subtittle"  id="section_projects">Proyects</h3>
+              <div class="proyect-contenten">
+                <div class="icono"><i class="fa-solid fa-hippo"></i></div>
+                <div class="tittle-company-1">
+                  <h4 class="title-experience cero-mg">Agricultural crop management system</h4>
+                   <p class="cero-mg">At Ponderosa Adventure Park, I worked in sales and customer service. Thanks to this experience, I was able to develop skills in teamwork, leadership, and customer service.</p>
+                  </div>
+               </div>
+               <div class="proyect-contenten">
+                <div class="icono"><i class="fa-solid fa-hippo"></i></div>
+                <div class="tittle-company-1">
+                  <h4 class="title-experience cero-mg">Cine Oasis</h4>
+                   <p class="cero-mg">At Ponderosa Adventure Park, I worked in sales and customer service. Thanks to this experience, I was able to develop skills in teamwork, leadership, and customer service.</p>
+                  </div>
+               </div>
+               <div class="proyect-contenten">
+                <div class="icono"><i class="fa-solid fa-hippo"></i></div>
+                <div class="tittle-company-1">
+                  <h4 class="title-experience cero-mg">Art Gallery</h4>
+                   <p class="cero-mg">At Ponderosa Adventure Park, I worked in sales and customer service. Thanks to this experience, I was able to develop skills in teamwork, leadership, and customer service.</p>
+                  </div>
+               </div>
           </div>
           </div>
         </main>
         
     </body>
-    <script>
-       const burgerInput = document.getElementById("burger"); 
-       const dropdown = document.getElementById("dropdownMenu");
-       const burgerLabel = document.getElementById("burgerToggle");
-
-
-       burgerInput.onclick = function() {
-        dropdown.classList.toggle("show"); 
-        };
-
-    window.addEventListener("resize", () => {
-    const isMobile = window.innerWidth <= 768; 
-    if (!isMobile) {
-    burgerInput.checked = false; 
-    dropdown.classList.remove("show"); 
-    }
-    });
-      </script>
+    <script src="scrip.js"></script>
 </html>
