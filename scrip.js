@@ -13,7 +13,7 @@ dropdown.classList.remove("show");
 }
 });
 
- document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
     const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
