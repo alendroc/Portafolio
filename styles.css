@@ -4,7 +4,7 @@ body {
     box-sizing: border-box  !important;
     font-family: "Poppins", sans-serif  !important;
     font-weight: 400  !important;
-    zoom: 174%;
+    zoom: 175%;
   transform-origin: top left;
     background-image: repeating-linear-gradient(0deg, rgb(0,0,0) 0px, rgb(0,0,0) 1px,transparent 1px, transparent 51px),repeating-linear-gradient(90deg, rgb(0,0,0) 0px, rgb(0,0,0) 1px,transparent 1px, transparent 51px),linear-gradient(90deg, rgb(6,6,9),rgb(6,6,9)) !important;
 }  
@@ -521,9 +521,14 @@ nav{
    }
   .title-experience{
     font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
     color: #99ccef;
     font-size: 14px;
-   
+    transition: all 0.2s ease-in;
+   &:hover{
+    color: #557289;
+   }
   }
   .proyect-contenten{
     display: flex;
