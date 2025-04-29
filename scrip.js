@@ -13,6 +13,29 @@ dropdown.classList.remove("show");
 }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  const body = document.body;
+
+  // iPhone detection (iOS)
+  const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+
+  // Android detection
+  const isAndroid = /android/i.test(userAgent);
+
+  // Windows detection
+  const isWindows = /windows/i.test(userAgent);
+
+  if (isIOS) {
+    document.body.classList.add("use-scale");
+  } else if (isAndroid || isWindows) {
+    document.body.style.zoom = "1.8";
+  }
+});
+
+
+
+
 const wrapper = document.querySelectorAll(".experience-wrapper");
 
 wrapper.forEach((wrapper) => {

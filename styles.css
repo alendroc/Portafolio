@@ -7,12 +7,11 @@ body {
     background-image: repeating-linear-gradient(0deg, rgb(0,0,0) 0px, rgb(0,0,0) 1px,transparent 1px, transparent 51px),repeating-linear-gradient(90deg, rgb(0,0,0) 0px, rgb(0,0,0) 1px,transparent 1px, transparent 51px),linear-gradient(90deg, rgb(6,6,9),rgb(6,6,9)) !important;
      overflow-x: hidden; 
   }  
-.scaled-container {
-  transform: scale(1.8);
-  transform-origin: top left;
-  width: calc(100% / 1.8); /* ajusta el ancho para evitar scroll horizontal */
-  overflow: hidden;
-}
+  .use-scale .scaled-container {
+    transform: scale(1.8);
+    transform-origin: top;
+    width: 100%;
+  }
 header{
     background: linear-gradient(115deg, rgb(211, 255, 215) 0%, rgb(0, 0, 0) 100%), radial-gradient(90% 100% at 50% 0%, rgb(200, 200, 200) 0%, rgb(22, 0, 45) 100%), radial-gradient(100% 100% at 80% 0%, rgb(250, 255, 0) 0%, rgb(36, 0, 0) 100%), radial-gradient(150% 210% at 100% 0%, rgb(112, 255, 0) 0%, rgb(20, 175, 125) 0%, rgb(0, 10, 255) 100%), radial-gradient(100% 100% at 100% 30%, rgb(255, 77, 0) 0%, rgba(0, 200, 255, 1) 100%), linear-gradient(60deg, rgb(255, 0, 0) 0%, rgb(120, 86, 255) 100%);
     background-blend-mode: overlay, overlay, difference, difference, difference, normal;  
@@ -487,14 +486,14 @@ nav{
   
   .experience-content{
     position: relative;
-    background-color:  #090c363d;
+    background-color: #090c363d; /* Fondo semi-transparente */
+    backdrop-filter: blur(20px);  /* Aplica el blur */
     z-index: 2;
     width: 100%;
-
     max-width: 37em;
     border-radius: 10px;
-    backdrop-filter: blur(20px);
     height: 100%;
+    
   }
   
   .Experience-contenten{
