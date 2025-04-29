@@ -13,26 +13,21 @@ dropdown.classList.remove("show");
 }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  const body = document.body;
+ document.addEventListener("DOMContentLoaded", function () {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-  // iPhone detection (iOS)
-  const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+    const isAndroid = /android/i.test(userAgent);
+    const isWindows = /windows/i.test(userAgent);
 
-  // Android detection
-  const isAndroid = /android/i.test(userAgent);
+    const scaledContainer = document.getElementById("scaled-container");
 
-  // Windows detection
-  const isWindows = /windows/i.test(userAgent);
-
-  if (isIOS) {
-    document.body.classList.add("use-scale");
-  } else if (isAndroid || isWindows) {
-    document.body.style.zoom = "1.8";
-  }
-});
-
+    if (isIOS) {
+      scaledContainer.classList.add("use-scale");
+    } else if (isAndroid || isWindows) {
+      document.body.style.zoom = "1.8";
+    }
+  });
 
 
 

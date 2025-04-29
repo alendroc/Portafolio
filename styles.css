@@ -7,7 +7,7 @@ body {
     background-image: repeating-linear-gradient(0deg, rgb(0,0,0) 0px, rgb(0,0,0) 1px,transparent 1px, transparent 51px),repeating-linear-gradient(90deg, rgb(0,0,0) 0px, rgb(0,0,0) 1px,transparent 1px, transparent 51px),linear-gradient(90deg, rgb(6,6,9),rgb(6,6,9)) !important;
      overflow-x: hidden; 
   }  
-  .use-scale .scaled-container {
+  .use-scale{
     transform: scale(1.8);
     transform-origin: top;
     width: 100%;
