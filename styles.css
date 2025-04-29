@@ -735,7 +735,7 @@ nav{
     font-size: 12px !important;
   }
 
-@media (max-width: 768px) {
+@media (max-width: 872px) {
 
     .nav-links {
         display: none;
@@ -752,7 +752,7 @@ nav{
     
 
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .dropdown {
         position: absolute;
         width: 100%;
@@ -798,9 +798,8 @@ nav{
     }
     #carouselExample, #carouselfirst, #carouselExpo{
       width: auto;
-      max-width: auto;
       max-width: fit-content;
-      height: 50vw;
+      height: 29vw;
     }
     .studyCard-collection{
       grid-template-columns: repeat(2, 1fr);
@@ -819,7 +818,7 @@ nav{
      }
     
 }
-@media (max-width: 350px){
+@media (max-width: 500px){
   .studyCard-collection{
     grid-template-columns: repeat(1, 1fr);
   }

@@ -6,7 +6,7 @@ burgerInput.onclick = function() {
  };
 
 window.addEventListener("resize", () => {
-const isMobile = window.innerWidth <= 768; 
+const isMobile = window.innerWidth <= 872; 
 if (!isMobile) {
 burgerInput.checked = false; 
 dropdown.classList.remove("show"); 
