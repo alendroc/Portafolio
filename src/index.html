@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Jose Alejandro Chaves">
-    <meta name="description" content="Portafolio web de Alejandro: desarrollador/a frontend, backend y diseñador/a web.">
-    <meta name="keywords" content="portafolio, desarrollador web, frontend, backend, diseño, Alejandro, Ingenieria, web, programador, programadora, ingeniero, ingeniera, software, desarrollo, diseño web">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Jose Alejandro Chaves" />
+    <meta
+      name="description"
+      content="Portafolio web de Alejandro: desarrollador/a frontend, backend y diseñador/a web."
+    />
+    <meta
+      name="keywords"
+      content="portafolio, desarrollador web, frontend, backend, diseño, Alejandro, Ingenieria, web, programador, programadora, ingeniero, ingeniera, software, desarrollo, diseño web"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-</head>
-    <body>
-      <div class="navbar-wrapper">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Gothic+Expanded+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  
+  <body>
+    <div class="navbar-wrapper">
       <div class="container-header">
         <nav class="shared-width content-navegation">
           <div class="logo">
-            <a href="#home">Alejandro Chaves</a>
+            <img class="img-logo" src="img/logoAle-Photoroom.png"/>
+            <p style="margin: 0; height: min-content; margin-top: 7px;">Alejandro</p>
           </div>
           <ul class="nav-links">
-            <li><a href="#about" id="nav_about">About me</a></li>
-            <li><a href="#projects" id="nav_projects">Projects</a></li>
+            <li><a href="#section_experience" id="nav_about">Experience</a></li>
+            <li><a href="#section_projects" id="nav_projects">Projects</a></li>
             <li><a href="#contact" id="nav_contact">Contact</a></li>
-            <select id="languageSwitcher">
-              <option value="en">English</option>
-              <option value="es">Español</option>
+            <select class="languageSwitcher">
+              <option value="en" style="color: black;">English</option>
+              <option value="es" style="color: black;">Español</option>
             </select>
           </ul>
           <div class="toggle-bottom">
-            <label class="burger"  id="burgerToggle" for="burger">
+            <label class="burger" id="burgerToggle" for="burger">
               <input type="checkbox" id="burger" />
               <span></span>
               <span></span>
@@ -40,96 +67,402 @@
         </nav>
       </div>
       <div class="dropdown content-navegation" id="dropdownMenu">
-        <li class="top"><a href="#about" id="drop_about">About me</a></li>
-        <li><a href="#projects" id="drop_projects">Projects</a></li>
-        <li class="bottom"><a href="#contact" id="drop_contact">Contact</a></li>
+        <li class="top"><a href="#section_experience" id="drop_about">Experience</a></li>
+        <li><a href="#section_projects" id="drop_projects">Projects</a></li>
+        <li class=""><a href="#contact" id="drop_contact">Contact</a></li>
+        <li><select class="languageSwitcher bottom">
+          <option value="en" style="color: black;">English</option>
+          <option value="es" style="color: black;">Español</option>
+        </select></li>
       </div>
     </div>
-        <header>
-             <div class="presentation  ">
-                    <div class="card shared-width">
-                        <div class="img-conten">
-                        </div>
-                        <div class="card-inf">
-                          <p id="name" class="cero-mg" style="font-size: 12px;"></p>
-                          <h2 id="title" class="cero-mg"></h2>
-                        
-                          <div class="tags">
-                            <span><p id="tag1" class="cero-mg"></p></span>
-                            <span><p id="tag2" class="cero-mg"></p></span>
-                          </div>
-                        
-                          <p id="description" style="font-size: 14px;"></p>
-                        </div>
-                    </div>
-            </div>
-        </header>
-        <main>
-          <div class="content-main">
-           <div class="tecnologis-content">
-            <h3 class="subtittle" id="section_technologies">Tecnologies</h3>
-            <ul class="tecnologis-list">
-              <li><i class="fa-brands fa-html5 html-icon"></i> HTML</li>
-              <li><i class="fa-brands fa-js js-icon"></i> JavaScript</li>
-              <li><i class="fa-brands fa-react react-icon"></i> React</li>
-              <li><i class="fa-brands fa-angular angular-icon"></i> Angular</li>
-              <li><i class="fa-brands fa-node-js node-icon"></i> NodeJS</li>
-              <li><i class="fa-brands fa-java java-icon"></i> Java</li>
-              <li><i class="fa-solid fa-database database-icon"></i> SQL</li>
-              <li><i class="fa-brands fa-docker docker-icon"></i> Docker</li>
-            </ul>
-           </div>
-           <div class="experience-content tecnologis-content">
-            <h3 class="subtittle" id="section_experience">Experience</h3>
-              <div class="Experience-contenten">
-                <div class="tittle-company">
-                  <div class="icono"><i class="fa-solid fa-hippo"></i></div>
-                  <h4 class="title-experience cero-mg" id="exp_ponderosa_title">Ponderosa Adventure Park</h4>
-                </div>
-                <p class="cero-mg"  id="exp_ponderosa_text">
-                  At Ponderosa Adventure Park, I worked in sales and customer service. Thanks to this experience, I was able to develop skills in teamwork, leadership, and customer service.
-                </p>
-            </div>
-              <div class="Experience-contenten">
-                <div class="tittle-company">
-                  <div class="icono">
-                    <i class="fa-solid fa-seedling"></i>
-                  </div>
-                  <h4 class="title-experience cero-mg"  id="exp_exportpack_title" >Export PAck</h4>
-                </div>
-                  <p class="cero-mg" id="exp_exportpack_text">
-                  I worked for a year and six months with the company Exportpack, developing software for an administrative system and controlling crops and inventory. I also helped with the implementation of agile methodologies such as Scrum.
-                </p>
-            </div>
+    <header>
+      <div class="presentation" id="home">
+        <div class="cardd shared-width">
+          <div class="img-conten  animate__animated animate__flash">
+            <img class="profile_img" src="img/IMG_0490.JPG"/>
           </div>
+          <div class="card-inf animate__animated  animate__flipInX">
+            <p id="name" class="cero-mg " style="font-size: 12px">Jose Alejandro Chaves Ramirez</p>
+            <h2 id="title" class="cero-mg ">Systems Engineer</h2>
 
-          <div class="experience-content tecnologis-content">
-            <h3 class="subtittle"  id="section_projects">Proyects</h3>
-              <div class="proyect-contenten">
-                <div class="icono"><i class="fa-solid fa-hippo"></i></div>
-                <div class="tittle-company-1">
-                  <h4 class="title-experience cero-mg">Agricultural crop management system</h4>
-                   <p class="cero-mg">At Ponderosa Adventure Park, I worked in sales and customer service. Thanks to this experience, I was able to develop skills in teamwork, leadership, and customer service.</p>
-                  </div>
-               </div>
-               <div class="proyect-contenten">
-                <div class="icono"><i class="fa-solid fa-hippo"></i></div>
-                <div class="tittle-company-1">
-                  <h4 class="title-experience cero-mg">Cine Oasis</h4>
-                   <p class="cero-mg">At Ponderosa Adventure Park, I worked in sales and customer service. Thanks to this experience, I was able to develop skills in teamwork, leadership, and customer service.</p>
-                  </div>
-               </div>
-               <div class="proyect-contenten">
-                <div class="icono"><i class="fa-solid fa-hippo"></i></div>
-                <div class="tittle-company-1">
-                  <h4 class="title-experience cero-mg">Art Gallery</h4>
-                   <p class="cero-mg">At Ponderosa Adventure Park, I worked in sales and customer service. Thanks to this experience, I was able to develop skills in teamwork, leadership, and customer service.</p>
-                  </div>
-               </div>
+            <div class="tags">
+              <span><p id="tag1" class="cero-mg">Ready to work</p></span>
+              <span><p id="tag2" class="cero-mg">Availability to move</p></span>
+            </div>
+            <p id="description" >I'm a software systems developer specializing in front-end development, but I'm also willing to take on challenges in back-end and database management, adapting to the needs of each project.</p>
+            <div class="tagsInfo">
+              <span><p id="tag" class="cero-mg">alejandro6chaves@gmail.com</p></span>
+              <a href="doc/Jose_Chaves_Ramirez CV.pdf" download="Jose_Chaves_Ramirez CV.pdf"><i class="fa-solid fa-file-lines" style="margin-right: 5px;"></i>CV</a>
+              <a href="https://www.linkedin.com/in/jose-alejandro-chaves-ramirez-497839188/"  style="font-size: 12px;"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com/alendroc" style="font-size: 12px;"><i class="fa-brands fa-github"></i></a>
+            </div>
           </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="content-main">
+        <div class="tecnologis-content">
+          <h3 class="subtittle" id="section_technologies">Technologies</h3>
+          <ul class="tecnologis-list">
+            <li class="html-li">
+              <i class="fa-brands fa-html5 html-icon"></i> HTML
+            </li>
+            <li class="js-li">
+              <i class="fa-brands fa-js js-icon"></i> JavaScript
+            </li>
+            <li class="react-li">
+              <i class="fa-brands fa-react react-icon"></i> React
+            </li>
+            <li class="angular-li">
+              <i class="fa-brands fa-angular angular-icon"></i> Angular
+            </li>
+            <li class="node-li">
+              <i class="fa-brands fa-node-js node-icon"></i> NodeJS
+            </li>
+            <li class="java-li">
+              <i class="fa-brands fa-java java-icon"></i> Java
+            </li>
+            <li class="sql-li">
+              <i class="fa-solid fa-database database-icon"></i> SQL
+            </li>
+            <li class="docker-li">
+              <i class="fa-brands fa-docker docker-icon"></i> Docker
+            </li>
+            <li class="html-li">
+              <i class="fa-solid fa-fire html-icon"></i> Fire Base
+            </li>
+          </ul>
+        </div>
+        <section class="experience-wrapper ">
+          <div class="experience-content">
+            <h3 class="subtittle" id="section_experience">Experience</h3>
+            <div class="Experience-contenten">
+              <div class="tittle-company">
+                <div class="icono animate__animated" id="icon-ponde"><i class="fa-solid fa-hippo"></i></div>
+                <h4 class="title-experience   cero-mg" id="exp_ponderosa_title">
+                  Ponderosa Adventure Park
+                </h4>
+              </div>
+              <p class="cero-mg phone-text" id="exp_ponderosa_text">
+                At Ponderosa Adventure Park, I worked in sales and customer
+                service. Thanks to this experience, I was able to develop skills
+                in teamwork, leadership, and customer service.
+              </p>
+            </div>
+            <div class="Experience-contenten">
+              <div class="tittle-company">
+                <div class="icono animate__animated" id="icon-expo">
+                  <i class="fa-solid fa-seedling"></i>
+                </div>
+                <h4 class="title-experience cero-mg" id="exp_exportpack_title">
+                  Export Pack
+                </h4>
+              </div>
+              <p class="cero-mg phone-text" id="exp_exportpack_text">
+                I worked for a year and six months with the company Exportpack,
+                developing software for an administrative system and controlling
+                crops and inventory. I also helped with the implementation of
+                agile methodologies such as Scrum.
+              </p>
+            </div>
           </div>
-        </main>
+        </section>
+
+        <section class="experience-wrapper">
+          <div class="experience-content">
+            <h3 class="subtittle" id="section_projects">Projects</h3>
+            <div class="proyect-contenten">
+              <div class="icono animate__animated carrot"><i class="fa-solid fa-carrot"></i></div>
+              <div class="tittle-company-1">
+                <h4 class="title-experience cero-mg" id="agricola_tittle">
+                  Agricultural crop management system
+                </h4>
+                
+                <p
+                  class="cero-mg phone-text"
+                  style="margin-top: 5px"
+                  id="agricola_text"
+                >
+                  This system manages the cultivation and lots of sugarcane and
+                  melons, as well as their irrigation and the products they
+                  need.
+                </p>
+                <div class="tecnologis-proyect">
+                  <ul class="proyect-tecnologis-list">
+                    <li class="react-li">React</li>
+                    <li class="react-li">tailwin</li>
+                    <li class="net-li">.Net</li>
+                    <li class="sql-li">SQL server</li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                id="carouselExpo"
+                class="carousel slide  animate__animated"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src="./img/loginExp.png"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/menuEpo.png"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExpo"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExpo"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <div class="proyect-contenten">
+              <div class="icono animate__animated cine"><i class="fa-solid fa-ticket"></i></div>
+              <div class="tittle-company-1">
+                <h4 class="title-experience cero-mg" id="cine_title">
+                  Cine Oasis
+                </h4>
+                <p
+                  class="cero-mg phone-text"
+                  style="margin-top: 5px"
+                  id="cine_text"
+                >
+                  This project simulates the purchase and sale of movie tickets
+                  as well as the acquisition of companion combos.
+                </p>
+                <div class="tecnologis-proyect">
+                  <ul class="proyect-tecnologis-list">
+                    <li class="angular-li">Angular</li>
+                    <li class="react-li">tailwin</li>
+                    <li class="net-li">Laravel</li>
+                    <li class="sql-li">SQL server</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                id="carouselExample"
+                class="carousel slide  animate__animated"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src="./img/cine (2).png"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/cine (1).png"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <div class="proyect-contenten">
+              <div class="icono animate__animated palette"><i class="fa-solid fa-palette"></i></div>
+              <div class="tittle-company-1">
+                <h4 class="title-experience cero-mg" id="galeri_tittle">
+                  Art Gallery
+                </h4>
+                <p
+                  class="cero-mg phone-text"
+                  style="margin-top: 5px"
+                  id="galeria_text"
+                >
+                  This system of buying and selling works of art helped both
+                  artists sell their works and people discover new talents.
+                </p>
+                <div class="tecnologis-proyect">
+                  <ul class="proyect-tecnologis-list">
+                    <li class="angular-li">Angular</li>
+                    <li class="net-li">Boostrap</li>
+                    <li class="laravel-li">Laravel</li>
+                    <li class="sql-li">MySql</li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                id="carouselfirst"
+                class="carousel slide  animate__animated"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src="./img/homeArt.png"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/menuArt.png"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselfirst"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselfirst"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="experience-wrapper">
+          <div class="experience-content">
+            <h3 class="subtittle" id="section_studies" style="margin-bottom: 0;">Studies</h3>
+            <div class="studyCard-collection">
+              <div class="study-card">
+                <p class="cero-mg years" id="study_highschool_years">2022</p>
+                <h4 class="cero-mg" id="study_highschool_level">High School</h4>
+                <p class="cero-mg" id="study_highschool_title">Technician in Business Informatics</p>
+              </div>
+              <div class="study-card">
+                <p class="cero-mg years" id="study_university_years">2022-2025</p>
+                <h4 class="cero-mg" id="study_university_level">University</h4>
+                <p class="institution cero-mg" id="study_university_institution">National University</p>
+                <p class="cero-mg" id="study_university_title">Systems Engineer</p>
+              </div>
+            </div>
         
-    </body>
-    <script src="scrip.js"></script>
+            <h3 class="subtittle" id="section_certifications" style="margin-bottom: 0;">Certifications</h3>
+            <div class="studyCard-collection">
+              <div class="study-card ">
+                <p class="cero-mg years" id="certification_occupational_year">2020</p>
+                <h4 class="cero-mg" id="certification_occupational_type">Course</h4>
+                <p class="cero-mg" id="certification_occupational_name">Occupational Health</p>
+              </div>
+              <div class="study-card">
+                <p class="cero-mg years" id="certification_itoperator_year">2020</p>
+                <h4 class="cero-mg" id="certification_itoperator_type">Course</h4>
+                <p class="cero-mg" id="certification_itoperator_name">Information Technology Operator</p>
+              </div>
+              <div class="study-card">
+                <p class="cero-mg years" id="certification_itessentials_year">2020</p>
+                <h4 class="cero-mg" id="certification_itessentials_type">Course</h4>
+                <p class="cero-mg" id="certification_itessentials_name">IT Essentials: PC Hardware and Software</p>
+              </div>
+            </div>
+          </div>
+        </section>
+       </div>
+      </main>
+      <footer style="width: 100%;">
+        <div class="background-end">
+        <div class="Me">
+          <h3  class="footer-tittle" id="section_me">A little about me</h3>
+          <div class="me-content">
+            <p class="text_me phone-text" id="text_me">Hi, I'm Alejandro. I'm very outgoing and curious about learning different skills. I like to stay organized. I consider myself a good communicator. My main hobbies are exercising, photography, and philosophy.</p>
+            <div class="me-img">
+              <img class="yo-img" src="img/yo90s-Photoroom.png"/>
+              <div class="shadow-circle"></div>
+            </div>
+          </div>
+          </div>
+        </div> 
+        <div class="footer-last">
+          <div class="Me extra" style="border-top: 1px solid white;">
+          <div class="home" id="contact">
+            <h4 class="footer-tittle" id="footer_residence_title" style="border: none;">Residence</h4>
+            <p><i class="fas fa-home" style="margin-right: 4px;"></i> Guanacaste, Bagaces, Costa Rica</p>
+            <p id="footer_residence_extra">Willing to move anywhere, I try to ensure that the workplace is not a limitation for my professional training, which is why I have a car and motorcycle license.</p>
+          </div>
+          <div class="contact" style="width: 100%;">
+            <h4 class="footer-tittle" style="border: none;" id="footer_contact_title">Contact</h4>
+            <p class="phone-text"><i class="fas fa-envelope mr-3"></i> alejandro6chaves@gmail.com</p>
+            <p id="footer_phone"><i class="fas fa-phone mr-3"></i> + 506 8863 2654</p>
+            <div class="tagsInfo social-media ">
+              <a href="https://github.com/alendroc"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/jose-alejandro-chaves-ramirez-497839188/"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/alejaaan_/"><i class="fa-brands fa-instagram"></i></a>
+              <a id="footer_cv" href="doc/Jose_Chaves_Ramirez CV.pdf" download="Jose_Chaves_Ramirez CV.pdf"><i class="fa-solid fa-file-lines" style="margin-right: 5px;"></i>CV</a>
+            </div>
+          </div>
+          </div>
+        </div>
+  </footer>
+  </body>
+ 
+  <script src="scrip.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
 </html>
