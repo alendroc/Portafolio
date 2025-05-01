@@ -135,7 +135,10 @@ document.getElementById('certification_itoperator_name').textContent = texts[lan
 document.getElementById('certification_itessentials_year').textContent = texts[lang].certification_itessentials_year;
 document.getElementById('certification_itessentials_type').textContent = texts[lang].certification_itessentials_type;
 document.getElementById('certification_itessentials_name').textContent = texts[lang].certification_itessentials_name;
-  
+document.getElementById('certification_scrum_type').textContent = texts[lang].certification_scrum_type;
+document.getElementById('certification_scrum_name').textContent = texts[lang].certification_scrum_name;
+
+
 document.getElementById('section_me').textContent = texts[lang].section_me;
 document.getElementById('text_me').textContent = texts[lang].text_me;
 document.getElementById('footer_residence_title').textContent = texts[lang].footer_residence_title;
