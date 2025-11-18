@@ -1,8 +1,11 @@
 const burgerInput = document.getElementById("burger"); 
 const dropdown = document.getElementById("dropdownMenu");
+const navbar = document.getElementById("navBar")
 const burgerLabel = document.getElementById("burgerToggle");
 burgerInput.onclick = function() {
  dropdown.classList.toggle("show"); 
+ navbar.classList.toggle("show");
+
  };
 
 window.addEventListener("resize", () => {
@@ -10,6 +13,7 @@ const isMobile = window.innerWidth <= 872;
 if (!isMobile) {
 burgerInput.checked = false; 
 dropdown.classList.remove("show"); 
+ navbar.classList.remove("show");
 }
 });
 
@@ -110,6 +114,8 @@ document.getElementById('exp_ponderosa_title').textContent = texts[lang].exp_pon
 document.getElementById('exp_ponderosa_text').textContent = texts[lang].exp_ponderosa_text;
 document.getElementById('exp_exportpack_title').textContent = texts[lang].exp_exportpack_title;
 document.getElementById('exp_exportpack_text').textContent = texts[lang].exp_exportpack_text;
+document.getElementById('exp_4geeks_title').textContent = texts[lang].exp_4geeks_title;
+document.getElementById('exp_4geeks_text').textContent = texts[lang].exp_4geeks_text;
 
 document.getElementById('agricola_tittle').textContent = texts[lang].agricola_title;
 document.getElementById('agricola_text').textContent = texts[lang].agricola_text;
@@ -150,14 +156,56 @@ document.getElementById('footer_contact_title').textContent = texts[lang].footer
 
   loadLanguage('en');
   
-  const languageSwitchers = document.querySelectorAll('.languageSwitcher');
+ const languageSwitchers = document.querySelectorAll('.languageSwitcher');
 
-  languageSwitchers.forEach(switcher => {
-    switcher.addEventListener('change', function () {
-      loadLanguage(this.value);
+languageSwitchers.forEach(switcher => {
+  const selected = switcher.querySelector('.dropdown-selected');
+  const selectedText = switcher.querySelector('.selected-text');
+  const options = switcher.querySelectorAll('.lenguaje');
 
+  // Toggle dropdown
+  selected.addEventListener('click', function(e) {
+    e.stopPropagation();
+    
+    // Cerrar otros dropdowns
+    languageSwitchers.forEach(other => {
+      if (other !== switcher) other.classList.remove('open');
+    });
+    
+    switcher.classList.toggle('open');
+  });
+
+  // Seleccionar opción
+  options.forEach(option => {
+    option.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      const lang = this.getAttribute('data-lang');
+      const text = this.getAttribute('data-text');
+      
+      loadLanguage(lang);
+
+      // Actualizar todos los switchers
       languageSwitchers.forEach(otherSwitcher => {
-        otherSwitcher.value = this.value;
+        otherSwitcher.setAttribute('data-value', lang);
+        otherSwitcher.querySelector('.selected-text').textContent = text;
+        
+        // Actualizar clase activa
+        const otherOptions = otherSwitcher.querySelectorAll('.lenguaje');
+        otherOptions.forEach(opt => {
+          opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
+        });
+        
+        // Cerrar dropdown
+        otherSwitcher.classList.remove('open');
       });
     });
   });
+});
+
+// Cerrar dropdown al hacer clic fuera
+document.addEventListener('click', function() {
+  languageSwitchers.forEach(switcher => {
+    switcher.classList.remove('open');
+  });
+});
