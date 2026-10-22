@@ -26,31 +26,39 @@
 </head>
 
 <body>
+  <div class="page-bg" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
+  </div>
   <div id="scaled-container">
     <div class="navbar-wrapper">
       <div class="container-header">
         <nav class="shared-width content-navegation" id="navBar">
           <div class="logo">
             <img class="img-logo" src="img/logoAle-Photoroom.png" />
-            <p style="margin: 0; height: min-content; margin-top: 7px;">Alejandro</p>
+            <p style="margin: 0; height: min-content;">Alejandro</p>
           </div>
           <ul class="nav-links">
             <li><a href="#section_experience" id="nav_about">Experience</a></li>
             <li><a href="#section_projects" id="nav_projects">Projects</a></li>
             <li><a href="#contact" id="nav_contact">Contact</a></li>
-            <li>
-              <div class="languageSwitcher bottom" data-value="en">
-                <div class="dropdown-selected">
-                  <span class="selected-text">English</span>
-                  <span class="dropdown-arrow">▼</span>
-                </div>
-                <div class="dropdown-options">
-                  <div class="lenguaje" data-lang="en" data-text="English">English</div>
-                  <div class="lenguaje" data-lang="es" data-text="Español">Español</div>
-                </div>
-              </div>
-            </li>
           </ul>
+          <div class="nav-right">
+            <div class="nav-social">
+              <a href="https://github.com/alendroc" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/jose-alejandro-chaves-ramirez-497839188/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/alejaaan_/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="languageSwitcher bottom" data-value="en">
+              <div class="dropdown-selected">
+                <span class="selected-text">English</span>
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              <div class="dropdown-options">
+                <div class="lenguaje" data-lang="en" data-text="English">English</div>
+                <div class="lenguaje" data-lang="es" data-text="Español">Español</div>
+              </div>
+            </div>
+          </div>
           <div class="toggle-bottom">
             <label class="burger" id="burgerToggle" for="burger">
               <input type="checkbox" id="burger" />
@@ -65,6 +73,11 @@
         <li class="top"><a href="#section_experience" id="drop_about">Experience</a></li>
         <li><a href="#section_projects" id="drop_projects">Projects</a></li>
         <li class=""><a href="#contact" id="drop_contact">Contact</a></li>
+        <li class="drop-social">
+          <a href="https://github.com/alendroc" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/jose-alejandro-chaves-ramirez-497839188/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/alejaaan_/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </li>
         <li>
           <div class="languageSwitcher bottom" data-value="en">
             <div class="dropdown-selected">
@@ -80,16 +93,19 @@
       </div>
     </div>
     <header>
-      <div class="presentation" id="home">
-        <div class="cardd shared-width">
-          <div class="img-conten  animate__animated animate__flash">
-            <img class="profile_img" src="img/portada.jpeg" />
-          </div>
-          <div class="card-inf animate__animated  animate__flipInX">
-            <p id="name" class="cero-mg " style="font-size: 12px">Jose Alejandro Chaves Ramirez</p>
-            <h2 id="title" class="cero-mg ">Systems Engineer</h2>
+      <div class="presentation hero" id="home">
+        <div class="hero-bg" id="hero-grain" aria-hidden="true"></div>
 
-            <div class="tags">
+        <span class="hero-bigtext" data-depth="0.015" aria-hidden="true">Alejandro</span>
+
+        <div class="hero-inner shared-width">
+          <div class="card-inf hero-copy">
+            <p class="hero-kicker reveal" style="--d:.15s" aria-hidden="true">Portfolio · 2026</p>
+            <p id="name" class="cero-mg reveal" style="--d:.25s; font-size: 12px">Jose Alejandro Chaves Ramirez</p>
+            <h2 id="title" class="cero-mg title-reveal" style="--d:.35s">Systems Engineer</h2>
+            <span class="accent-line" aria-hidden="true"></span>
+
+            <div class="tags reveal" style="--d:.5s">
               <span>
                 <p id="tag1" class="cero-mg">Ready to work</p>
               </span>
@@ -97,255 +113,344 @@
                 <p id="tag2" class="cero-mg">Availability to move</p>
               </span>
             </div>
-            <p id="description">I'm a software systems developer specializing in front-end development, but I'm also
+            <p id="description" class="reveal" style="--d:.6s">I'm a software systems developer specializing in front-end development, but I'm also
               willing to take on challenges in back-end and database management, adapting to the needs of each project.
             </p>
-            <div class="tagsInfo">
-              <span>
-                <p id="tag" class="cero-mg">alejandro6chaves@gmail.com</p>
-              </span>
-              <a href="doc/JoseChaves_CV_EN.pdf" download="Jose_Chaves_Ramirez_CV_EN.pdf"><i
-                  class="fa-solid fa-file-lines" style="margin-right: 5px;"></i>CV English</a>
-              <a href="doc/JoseChaves_CV_ES.pdf" download="Jose_Chaves_Ramirez_CV_ES.pdf"><i
-                  class="fa-solid fa-file-lines" style="margin-right: 5px;"></i>CV Español</a>
-              <a href="https://www.linkedin.com/in/jose-alejandro-chaves-ramirez-497839188/" target="_blank"
-                style="font-size: 12px;"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://github.com/alendroc" target="_blank" style="font-size: 12px;"><i
-                  class="fa-brands fa-github"></i></a>
+            <div class="tagsInfo reveal" style="--d:.72s">
+              <a class="metal-btn" href="mailto:alejandro6chaves@gmail.com"><i class="fa-solid fa-envelope"></i><span id="tag">alejandro6chaves@gmail.com</span></a>
+              <a class="metal-btn" href="doc/JoseChaves_CV_EN.pdf" download="Jose_Chaves_Ramirez_CV_EN.pdf"><i
+                  class="fa-solid fa-file-lines"></i>CV English</a>
+              <a class="metal-btn" href="doc/JoseChaves_CV_ES.pdf" download="Jose_Chaves_Ramirez_CV_ES.pdf"><i
+                  class="fa-solid fa-file-lines"></i>CV Español</a>
+              <a class="metal-btn metal-icon" href="https://www.linkedin.com/in/jose-alejandro-chaves-ramirez-497839188/" target="_blank" rel="noopener"
+                aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a class="metal-btn metal-icon" href="https://github.com/alendroc" target="_blank" rel="noopener"
+                aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+
+          <!-- Collage -->
+          <div class="hero-collage">
+            <div class="piece p-main" data-depth="0.05" style="--rot:-1.5deg; --d:.4s">
+              <figure class="paper"><img src="img/portada.jpeg" alt="Jose Alejandro Chaves Ramirez" width="1246" height="1280" fetchpriority="high" /></figure>
+            </div>
+            <div class="piece p-char" data-depth="0.1" style="--rot:0deg; --d:.9s">
+              <img src="img/yo90s-Photoroom.png" alt="" aria-hidden="true" />
             </div>
           </div>
         </div>
+        <span class="hero-line" aria-hidden="true"></span>
       </div>
     </header>
     <main>
       <div class="content-main">
-        <div class="tecnologis-content">
-          <h3 class="subtittle" id="section_technologies">Technologies</h3>
-          <ul class="tecnologis-list">
-            <li class="html-li">
-              <i class="fa-brands fa-html5 html-icon"></i> HTML
-            </li>
-            <li class="js-li">
-              <i class="fa-brands fa-js js-icon"></i> JavaScript
-            </li>
-            <li class="react-li">
-              <i class="fa-brands fa-react react-icon"></i> React
-            </li>
-            <li class="angular-li">
-              <i class="fa-brands fa-angular angular-icon"></i> Angular
-            </li>
-            <li class="node-li">
-              <i class="fa-brands fa-node-js node-icon"></i> NodeJS
-            </li>
-            <li class="java-li">
-              <i class="fa-brands fa-java java-icon"></i> Java
-            </li>
-            <li class="sql-li">
-              <i class="fa-solid fa-database database-icon"></i> SQL
-            </li>
-            <li class="docker-li">
-              <i class="fa-brands fa-docker docker-icon"></i> Docker
-            </li>
-            <li class="html-li">
-              <i class="fa-solid fa-fire html-icon"></i> Fire Base
-            </li>
-            <li class="python-li ">
-              <i class="fa-brands fa-python js-icon"></i> Python
-            </li>
-            <li class="wordpress-li">
-              <i class="fa-brands fa fa-wordpress"></i> Wordpress
-            </li>
-            <li class="sql-li">
-              <i class="fa-brands fa fa-linux"></i> Linux
-            </li>
-            <li class="html-li">
-              <i class="fa-brands fa fa-git html-icon
-              "></i> Git
-            </li>
-            etc...
-          </ul>
-        </div>
-        <section class="experience-wrapper ">
+        <section class="section tecnologis-content">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">01</span>
+            <h3 class="subtittle" id="section_technologies">Technologies</h3>
+          </div>
+          <div class="tech-marquee">
+            <ul class="tech-track" data-dir="left">
+              <li class="tech-card" style="--ic:#e2740c"><i class="fa-brands fa-html5"></i><span>HTML</span></li>
+              <li class="tech-card" style="--ic:#ecec36"><i class="fa-brands fa-js"></i><span>JavaScript</span></li>
+              <li class="tech-card" style="--ic:#61dafb"><i class="fa-brands fa-react"></i><span>React</span></li>
+              <li class="tech-card" style="--ic:#e73737"><i class="fa-brands fa-angular"></i><span>Angular</span></li>
+              <li class="tech-card" style="--ic:#68a063"><i class="fa-brands fa-node-js"></i><span>NodeJS</span></li>
+              <li class="tech-card" style="--ic:#8f9ff2"><i class="fa-brands fa-java"></i><span>Java</span></li>
+              <li class="tech-card" style="--ic:#9aa3ad"><i class="fa-solid fa-database"></i><span>SQL</span></li>
+            </ul>
+            <ul class="tech-track" data-dir="right">
+              <li class="tech-card" style="--ic:#2f9cf0"><i class="fa-brands fa-docker"></i><span>Docker</span></li>
+              <li class="tech-card" style="--ic:#ffca28"><i class="fa-solid fa-fire"></i><span>Firebase</span></li>
+              <li class="tech-card" style="--ic:#5fa0d3"><i class="fa-brands fa-python"></i><span>Python</span></li>
+              <li class="tech-card" style="--ic:#3b9fd1"><i class="fa-brands fa-wordpress"></i><span>WordPress</span></li>
+              <li class="tech-card" style="--ic:#f5f5f5"><i class="fa-brands fa-linux"></i><span>Linux</span></li>
+              <li class="tech-card" style="--ic:#f05133"><i class="fa-brands fa-git-alt"></i><span>Git</span></li>
+            </ul>
+          </div>
+        </section>
+        <section class="section experience-wrapper">
           <div class="experience-content">
-            <h3 class="subtittle" id="section_experience">Experience</h3>
-            <div class="Experience-contenten">
-              <div class="tittle-company">
-                <div class="icono animate__animated" id="icon-ponde"><i class="fa-solid fa-hippo"></i></div>
-                <a class="title-experience   cero-mg" href="https://ponderosacostarica.com/" target="_blank" id="exp_ponderosa_title">
-                  Ponderosa Adventure Park
-                </a>
-              </div>
-              <p class="cero-mg phone-text" id="exp_ponderosa_text">
-                At Ponderosa Adventure Park, I worked in sales and customer
-                service. Thanks to this experience, I was able to develop skills
-                in teamwork, leadership, and customer service.
-              </p>
+            <div class="section-head">
+              <span class="section-num" aria-hidden="true">02</span>
+              <h3 class="subtittle" id="section_experience">Experience</h3>
             </div>
-            <div class="Experience-contenten">
-              <div class="tittle-company">
-                <div class="icono animate__animated" id="icon-expo">
-                  <i class="fa-solid fa-seedling"></i>
-                </div>
-                <a class="title-experience cero-mg" id="exp_exportpack_title">
-                  Export Pack
-                </a>
+            <div class="exp-layout">
+              <div class="exp-nav">
+              <button class="exp-arrow exp-arrow--prev" type="button" aria-label="Anterior" hidden><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="exp-arrow exp-arrow--next" type="button" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+              <div class="exp-list" role="tablist" aria-orientation="vertical">
+              <button class="exp-tab is-active" role="tab" id="tab-knotfix" aria-controls="panel-knotfix" aria-selected="true" tabindex="0" type="button">
+                <span class="exp-tab-icon"><i class="fa-solid fa-rocket"></i></span>
+                <span class="exp-tab-text">
+                  <b>Knotfix</b>
+                <small id="exp_knotfix_role"></small>
+              </span>
+            </button>
+              <button class="exp-tab" role="tab" id="tab-4geeks" aria-controls="panel-4geeks" aria-selected="false" tabindex="-1" type="button">
+                <span class="exp-tab-icon"><i class="fa-solid fa-desktop"></i></span>
+                <span class="exp-tab-text">
+                  <b>4Geeks</b>
+                <small id="exp_4geeks_role"></small>
+              </span>
+            </button>
+              <button class="exp-tab" role="tab" id="tab-exportpack" aria-controls="panel-exportpack" aria-selected="false" tabindex="-1" type="button">
+                <span class="exp-tab-icon"><i class="fa-solid fa-seedling"></i></span>
+                <span class="exp-tab-text">
+                  <b>Export Pack</b>
+                <small id="exp_exportpack_role"></small>
+              </span>
+            </button>
+              <button class="exp-tab" role="tab" id="tab-ponderosa" aria-controls="panel-ponderosa" aria-selected="false" tabindex="-1" type="button">
+                <span class="exp-tab-icon"><i class="fa-solid fa-hippo"></i></span>
+                <span class="exp-tab-text">
+                  <b>Ponderosa</b>
+                <small id="exp_ponderosa_role"></small>
+              </span>
+            </button>
               </div>
-              <p class="cero-mg phone-text" id="exp_exportpack_text">
-                I worked for a year and six months with the company Exportpack,
-                developing software for an administrative system and controlling
-                crops and inventory. I also helped with the implementation of
-                agile methodologies such as Scrum.
-              </p>
+              </div>
+              <div class="exp-stage">
+          <article class="exp-panel exp-knotfix is-active" role="tabpanel" id="panel-knotfix" aria-labelledby="tab-knotfix">
+            <div class="exp-media">
+              <i class="fa-solid fa-rocket exp-media-icon" aria-hidden="true"></i>
+              <img src="img/knotfix.png" class="fit-contain" alt="Knotfix" width="180" height="180" loading="eager" onerror="this.remove()" />
             </div>
-            <div class="Experience-contenten">
-              <div class="tittle-company">
-                <div class="icono animate__animated" id="icon-4geeks">
-                  <i class="fa fa-desktop"></i>
-                </div>
-                <a class="title-experience cero-mg" href="https://4geeks.io/en/" target="_blank"  id="exp_4geeks_title">
-                  4Geeks
-                </a>
+            <div class="exp-body">
+              <div class="exp-head">
+                <h4 class="exp-title" id="exp_knotfix_title">Knotfix</h4>
+                <span class="exp-period" id="exp_knotfix_period"></span>
               </div>
-              <p class="cero-mg phone-text" id="exp_4geeks_text">
-                At 4Geeks I spent six months, performing all kinds of development work such as systems support, module
-                creation, UX/UI design, and language migration of their main website.
-              </p>
+              <p class="exp-text" id="exp_knotfix_text">I created Knotfix, a software development company, and built a team of 3 people. I handled sales, development and marketing work to make the brand grow.</p>
+            <div class="exp-cards">
+              <span class="exp-card exp-card--sales"><i class="fa-solid fa-handshake"></i><b id="exp_knotfix_sales_t">Sales</b></span>
+              <span class="exp-card exp-card--dev"><i class="fa-solid fa-code"></i><b id="exp_knotfix_dev_t">Development</b></span>
+              <span class="exp-card exp-card--mkt"><i class="fa-solid fa-bullhorn"></i><b id="exp_knotfix_mkt_t">Marketing</b></span>
+            </div>
+            </div>
+          </article>
+          <article class="exp-panel exp-4geeks" role="tabpanel" id="panel-4geeks" aria-labelledby="tab-4geeks" hidden>
+            <div class="exp-media">
+              <i class="fa-solid fa-desktop exp-media-icon" aria-hidden="true"></i>
+              <img src="img/4geeks.png" class="fit-contain" alt="4Geeks" width="2000" height="1414" loading="lazy" onerror="this.remove()" />
+            </div>
+            <div class="exp-body">
+              <div class="exp-head">
+                <a class="exp-title" href="https://4geeks.io/en/" target="_blank" rel="noopener" id="exp_4geeks_title">4Geeks</a>
+                
+                <span class="exp-period" id="exp_4geeks_period"></span>
+              </div>
+              <p class="exp-text" id="exp_4geeks_text">At 4Geeks I spent six months, performing all kinds of development work such as systems support, module creation, UX/UI design, and language migration of their main website.</p>
+            </div>
+          </article>
+          <article class="exp-panel exp-exportpack" role="tabpanel" id="panel-exportpack" aria-labelledby="tab-exportpack" hidden>
+            <div class="exp-media">
+              <i class="fa-solid fa-seedling exp-media-icon" aria-hidden="true"></i>
+              <img src="img/logoExporpack.jpeg" class="fit-contain" alt="Export Pack" width="627" height="623" loading="lazy" onerror="this.remove()" />
+            </div>
+            <div class="exp-body">
+              <div class="exp-head">
+                <h4 class="exp-title" id="exp_exportpack_title">Export Pack</h4>
+                
+                <span class="exp-period" id="exp_exportpack_period"></span>
+              </div>
+              <p class="exp-text" id="exp_exportpack_text">I worked for a year and six months with the company Exportpack, developing software for an administrative system and controlling crops and inventory. I also helped with the implementation of agile methodologies such as Scrum.</p>
+            </div>
+          </article>
+          <article class="exp-panel exp-ponderosa" role="tabpanel" id="panel-ponderosa" aria-labelledby="tab-ponderosa" hidden>
+            <div class="exp-media">
+              <i class="fa-solid fa-hippo exp-media-icon" aria-hidden="true"></i>
+            </div>
+            <div class="exp-body">
+              <div class="exp-head">
+                <a class="exp-title" href="https://ponderosacostarica.com/" target="_blank" rel="noopener" id="exp_ponderosa_title">Ponderosa</a>
+                
+                <span class="exp-period" id="exp_ponderosa_period"></span>
+              </div>
+              <p class="exp-text" id="exp_ponderosa_text">At Ponderosa, I worked in sales and customer service. Thanks to this experience, I was able to develop skills in teamwork, leadership, and customer service.</p>
+            </div>
+          </article>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="experience-wrapper">
+        <section class="section experience-wrapper">
           <div class="experience-content">
-            <h3 class="subtittle" id="section_projects">Projects</h3>
-            <div class="proyect-contenten">
-              <div class="icono animate__animated carrot"><i class="fa-solid fa-carrot"></i></div>
-              <div class="tittle-company-1">
-                <a href="https://github.com/alendroc/ExportFront" target="_blank" class="title-experience cero-mg"
-                  id="agricola_tittle">
-                  Agricultural crop management system
-                </a>
-
-                <p class="cero-mg phone-text" style="margin-top: 5px" id="agricola_text">
-                  This system manages the cultivation and lots of sugarcane and
-                  melons, as well as their irrigation and the products they
-                  need.
-                </p>
-                <div class="tecnologis-proyect">
-                  <ul class="proyect-tecnologis-list">
-                    <li class="react-li">React</li>
-                    <li class="react-li">Tailwind</li>
-                    <li class="net-li">.Net</li>
-                    <li class="sql-li">SQL server</li>
+            <div class="section-head">
+              <span class="section-num" aria-hidden="true">03</span>
+              <h3 class="subtittle" id="section_projects">Projects</h3>
+            </div>
+            <div class="proj-showcase">
+              <ol class="proj-list">
+                <li class="proj-item is-active" data-proj="0">
+                  <!-- TODO: URL del sitio de Censuma, tecnologías -->
+                  <span class="proj-num">01</span>
+                  <span class="proj-kind" id="censuma_kind">SaaS · Knotfix</span>
+                  <h4 class="proj-title">Censuma</h4>
+                  <p class="proj-text" id="censuma_text">SaaS for workplace climate and satisfaction studies, built on scientific models that turn surveys into quantitative results.</p>
+                  <ul class="proj-points">
+                    <li id="censuma_p1">Climate and satisfaction surveys</li>
+                    <li id="censuma_p2">Scientific measurement models</li>
+                    <li id="censuma_p3">Quantitative results and reports</li>
                   </ul>
-                </div>
-              </div>
-              <div id="carouselExpo" class="carousel slide  animate__animated" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./img/loginExp.png" class="d-block w-100" alt="..." />
+                  <div class="proj-thumbs">
+                    <button class="proj-thumb" type="button" data-shot="0"><img src="img/projects/censuma-1.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                    <button class="proj-thumb" type="button" data-shot="1"><img src="img/projects/censuma-2.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                    <button class="proj-thumb" type="button" data-shot="2"><img src="img/projects/censuma-3.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                    <button class="proj-thumb" type="button" data-shot="3"><img src="img/projects/censuma-4.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
                   </div>
-                  <div class="carousel-item">
-                    <img src="./img/menuEpo.png" class="d-block w-100" alt="..." />
+                </li>
+                <li class="proj-item" data-proj="1">
+                  <!-- TODO: nombre de la ONG, tecnologías -->
+                  <span class="proj-num">02</span>
+                  <span class="proj-kind" id="ong_kind">Custom system · Knotfix</span>
+                  <h4 class="proj-title" id="ong_title">NGO management system</h4>
+                  <p class="proj-text" id="ong_text">Platform that manages an NGO's finances, donations, payroll and fiscal year in one place.</p>
+                  <ul class="proj-points">
+                    <li id="ong_p1">Finances and donations</li>
+                    <li id="ong_p2">Payroll</li>
+                    <li id="ong_p3">Fiscal year closing</li>
+                  </ul>
+                  <div class="proj-thumbs">
+                    <button class="proj-thumb" type="button" data-shot="0"><img src="img/projects/ong-1.webp" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                    <button class="proj-thumb" type="button" data-shot="1"><img src="img/projects/ong-2.webp" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                    <button class="proj-thumb" type="button" data-shot="2"><img src="img/projects/ong-3.webp" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                  </div>
+                </li>
+                <li class="proj-item" data-proj="2">
+                  <!-- TODO: URL de Luck Dream, tecnologías -->
+                  <span class="proj-num">03</span>
+                  <span class="proj-kind" id="luckdream_kind">Platform · Knotfix</span>
+                  <h4 class="proj-title">Luck Dream</h4>
+                  <p class="proj-text" id="luckdream_text">Raffle website where people pick and buy their numbers, with an admin panel to manage buyers.</p>
+                  <ul class="proj-points">
+                    <li id="luckdream_p1">Number selection and purchase</li>
+                    <li id="luckdream_p2">Admin panel for buyers</li>
+                    <li id="luckdream_p3">Automatic notification emails</li>
+                  </ul>
+                  <div class="proj-thumbs">
+                    <button class="proj-thumb" type="button" data-shot="0"><img src="img/projects/luckdream-1.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                    <button class="proj-thumb" type="button" data-shot="1"><img src="img/projects/luckdream-2.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                    <button class="proj-thumb" type="button" data-shot="2"><img src="img/projects/luckdream-3.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                  </div>
+                </li>
+                <li class="proj-item" data-proj="3">
+                  <span class="proj-num">04</span>
+                  <span class="proj-kind" id="agricola_kind">Internal system · Export Pack</span>
+                  <h4 class="proj-title" id="agricola_tittle">Agricultural crop management system</h4>
+                  <p class="proj-text" id="agricola_text">This system manages the cultivation and lots of sugarcane and melons, as well as their irrigation and the products they need.</p>
+                  <ul class="proj-points">
+                    <li id="agricola_p1">Sugarcane and melon lots</li>
+                    <li id="agricola_p2">Irrigation control</li>
+                    <li id="agricola_p3">Supplies and products</li>
+                  </ul>
+                  <ul class="proj-chips">
+                    <li style="--ic:#61dafb"><i class="fa-brands fa-react"></i>React</li>
+                    <li style="--ic:#38bdf8"><i class="fa-solid fa-wind"></i>Tailwind</li>
+                    <li style="--ic:#a179dc"><i class="fa-brands fa-microsoft"></i>.NET</li>
+                    <li style="--ic:#9aa3ad"><i class="fa-solid fa-database"></i>SQL Server</li>
+                  </ul>
+                  <a class="proj-link" href="https://github.com/alendroc/ExportFront" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i><span id="proj_code_agricola">Code</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <div class="proj-thumbs">
+                    <button class="proj-thumb" type="button" data-shot="0"><img src="img/loginExp.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                    <button class="proj-thumb" type="button" data-shot="1"><img src="img/menuEpo.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                  </div>
+                </li>
+              </ol>
+              <div class="proj-viewer">
+                <div class="proj-window is-active" data-proj="0">
+                  <div class="proj-bar"><i></i><i></i><i></i><span>censuma</span></div>
+                  <button class="proj-screen" type="button" aria-label="Censuma">
+                    <i class="proj-ph fa-solid fa-chart-pie" aria-hidden="true"></i>
+                    <img class="is-shown" src="img/projects/censuma-1.png" alt="Censuma – 1" loading="lazy" onerror="this.remove()" />
+                    <img src="img/projects/censuma-2.png" alt="Censuma – 2" loading="lazy" onerror="this.remove()" />
+                    <img src="img/projects/censuma-3.png" alt="Censuma – 3" loading="lazy" onerror="this.remove()" />
+                    <img src="img/projects/censuma-4.png" alt="Censuma – 4" loading="lazy" onerror="this.remove()" />
+                  </button>
+                  <div class="proj-dots">
+                    <button class="is-on" type="button" data-shot="0" aria-label="1"></button>
+                    <button type="button" data-shot="1" aria-label="2"></button>
+                    <button type="button" data-shot="2" aria-label="3"></button>
+                    <button type="button" data-shot="3" aria-label="4"></button>
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExpo" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExpo" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+                <div class="proj-window" data-proj="1">
+                  <div class="proj-bar"><i></i><i></i><i></i><span>ong</span></div>
+                  <button class="proj-screen" type="button" aria-label="NGO management system">
+                    <i class="proj-ph fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+                    <img class="is-shown" src="img/projects/ong-1.webp" alt="NGO management system – 1" loading="lazy" onerror="this.remove()" />
+                    <img src="img/projects/ong-2.webp" alt="NGO management system – 2" loading="lazy" onerror="this.remove()" />
+                    <img src="img/projects/ong-3.webp" alt="NGO management system – 3" loading="lazy" onerror="this.remove()" />
+                  </button>
+                  <div class="proj-dots">
+                    <button class="is-on" type="button" data-shot="0" aria-label="1"></button>
+                    <button type="button" data-shot="1" aria-label="2"></button>
+                    <button type="button" data-shot="2" aria-label="3"></button>
+                  </div>
+                </div>
+                <div class="proj-window" data-proj="2">
+                  <div class="proj-bar"><i></i><i></i><i></i><span>luckdream</span></div>
+                  <button class="proj-screen" type="button" aria-label="Luck Dream">
+                    <i class="proj-ph fa-solid fa-ticket" aria-hidden="true"></i>
+                    <img class="is-shown" src="img/projects/luckdream-1.png" alt="Luck Dream – 1" loading="lazy" onerror="this.remove()" />
+                    <img src="img/projects/luckdream-2.png" alt="Luck Dream – 2" loading="lazy" onerror="this.remove()" />
+                    <img src="img/projects/luckdream-3.png" alt="Luck Dream – 3" loading="lazy" onerror="this.remove()" />
+                  </button>
+                  <div class="proj-dots">
+                    <button class="is-on" type="button" data-shot="0" aria-label="1"></button>
+                    <button type="button" data-shot="1" aria-label="2"></button>
+                    <button type="button" data-shot="2" aria-label="3"></button>
+                  </div>
+                </div>
+                <div class="proj-window" data-proj="3">
+                  <div class="proj-bar"><i></i><i></i><i></i><span>crop-management</span></div>
+                  <button class="proj-screen" type="button" aria-label="Agricultural crop management system">
+                    <i class="proj-ph fa-solid fa-seedling" aria-hidden="true"></i>
+                    <img class="is-shown" src="img/loginExp.png" alt="Agricultural crop management system – 1" loading="lazy" onerror="this.remove()" />
+                    <img src="img/menuEpo.png" alt="Agricultural crop management system – 2" loading="lazy" onerror="this.remove()" />
+                  </button>
+                  <div class="proj-dots">
+                    <button class="is-on" type="button" data-shot="0" aria-label="1"></button>
+                    <button type="button" data-shot="1" aria-label="2"></button>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="proyect-contenten">
-              <div class="icono animate__animated cine"><i class="fa-solid fa-ticket"></i></div>
-              <div class="tittle-company-1">
-                <a href="https://github.com/alendroc/CineOasis-Front" target="_blank" class="title-experience cero-mg"
-                  id="cine_title">
-                  Cine Oasis
+            <div class="proj-sites">
+              <h4 class="proj-sites-title" id="sites_title">Websites</h4>
+              <div class="proj-sites-grid">
+                <a class="site-card" href="https://magicplacesantateresa.com/" target="_blank" rel="noopener">
+                  <div class="site-frame">
+                    <div class="proj-bar"><i></i><i></i><i></i><span>magicplace</span></div>
+                    <div class="site-shot"><i class="proj-ph fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><img src="img/magicplace.png" alt="Magic Place" loading="lazy" onerror="this.remove()" /></div>
+                  </div>
+                  <div class="site-info"><b>Magic Place</b><span id="magicplace_kind">Website</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
                 </a>
-                <p class="cero-mg phone-text" style="margin-top: 5px" id="cine_text">
-                  This project simulates the purchase and sale of movie tickets
-                  as well as the acquisition of companion combos.
-                </p>
-                <div class="tecnologis-proyect">
-                  <ul class="proyect-tecnologis-list">
-                    <li class="angular-li">Angular</li>
-                    <li class="react-li">Tailwind</li>
-                    <li class="laravel-li">Laravel</li>
-                    <li class="sql-li">SQL server</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div id="carouselExample" class="carousel slide  animate__animated" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./img/cine (2).png" class="d-block w-100" alt="..." />
+                <a class="site-card" href="https://studio27byvicente.com/" target="_blank" rel="noopener">
+                  <div class="site-frame">
+                    <div class="proj-bar"><i></i><i></i><i></i><span>studio27</span></div>
+                    <div class="site-shot"><i class="proj-ph fa-solid fa-camera" aria-hidden="true"></i><img src="img/studio27.png" alt="Studio 27" loading="lazy" onerror="this.remove()" /></div>
                   </div>
-                  <div class="carousel-item">
-                    <img src="./img/cine (1).png" class="d-block w-100" alt="..." />
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                  data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                  data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+                  <div class="site-info"><b>Studio 27</b><span id="studio27_kind">Website</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
+                </a>
               </div>
             </div>
-            <div class="proyect-contenten">
-              <div class="icono animate__animated palette"><i class="fa-solid fa-palette"></i></div>
-              <div class="tittle-company-1">
-                <a href="https://github.com/JosueCR170/Front-Galeria" target="_blank" class="title-experience cero-mg"
-                  id="galeri_tittle">
-                  Art Gallery
-                </a>
-                <p class="cero-mg phone-text" style="margin-top: 5px" id="galeria_text">
-                  This system of buying and selling works of art helped both
-                  artists sell their works and people discover new talents.
-                </p>
-                <div class="tecnologis-proyect">
-                  <ul class="proyect-tecnologis-list">
-                    <li class="angular-li">Angular</li>
-                    <li class="net-li">Boostrap</li>
-                    <li class="laravel-li">Laravel</li>
-                    <li class="sql-li">MySql</li>
-                  </ul>
-                </div>
-              </div>
-              <div id="carouselfirst" class="carousel slide  animate__animated" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./img/homeArt.png" class="d-block w-100" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/menuArt.png" class="d-block w-100" alt="..." />
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselfirst"
-                  data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselfirst"
-                  data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-            </div>
+            <dialog class="lightbox" aria-label="Capturas del proyecto">
+              <img class="lightbox-img" src="" alt="" />
+              <button class="lightbox-btn lightbox-prev" type="button" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="lightbox-btn lightbox-next" type="button" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+              <button class="lightbox-btn lightbox-close" type="button" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+              <span class="lightbox-count"></span>
+            </dialog>
           </div>
         </section>
-        <section class="experience-wrapper">
+        <section class="section experience-wrapper">
           <div class="experience-content">
-            <h3 class="subtittle" id="section_studies" style="margin-bottom: 0;">Studies</h3>
+            <div class="section-head">
+              <span class="section-num" aria-hidden="true">04</span>
+              <h3 class="subtittle" id="section_studies">Studies</h3>
+            </div>
             <div class="studyCard-collection">
               <a class="study-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz"
                 target="_blank" style="text-decoration: none; color: inherit;">
@@ -362,7 +467,7 @@
               </a>
             </div>
 
-            <h3 class="subtittle" id="section_certifications" style="margin-bottom: 0;">Certifications</h3>
+            <h3 class="subtittle subtittle-sm" id="section_certifications">Certifications</h3>
 
             <div class="studyCard-collection">
               <a class="study-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz"
@@ -396,8 +501,11 @@
     </main>
     <footer style="width: 100%;">
       <div class="background-end">
-        <div class="Me">
-          <h3 class="footer-tittle" id="section_me">A little about me</h3>
+        <div class="Me section">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">05</span>
+            <h3 class="subtittle" id="section_me">A little about me</h3>
+          </div>
           <div class="me-content">
             <p class="text_me phone-text" id="text_me">Hi, I'm Alejandro. I'm very outgoing and curious about learning
               different skills. I like to stay organized. I consider myself a good communicator. My main hobbies are
@@ -434,6 +542,8 @@
   </div>
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="grainient.js" defer></script>
 <script src="scrip.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
   integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
