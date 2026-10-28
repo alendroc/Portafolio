@@ -101,8 +101,12 @@
         <div class="hero-inner shared-width">
           <div class="card-inf hero-copy">
             <p class="hero-kicker reveal" style="--d:.15s" aria-hidden="true">Portfolio · 2026</p>
-            <p id="name" class="cero-mg reveal" style="--d:.25s; font-size: 12px">Jose Alejandro Chaves Ramirez</p>
-            <h2 id="title" class="cero-mg title-reveal" style="--d:.35s">Systems Engineer</h2>
+            <p id="name" class="cero-mg reveal hero-name" style="--d:.25s">Jose Alejandro Chaves Ramirez</p>
+            <h2 class="cero-mg title-reveal flip-words" style="--d:.35s">
+              <span class="flip-word is-on" id="title">Systems Engineer</span>
+              <span class="flip-word" id="title_2" aria-hidden="true">Full Stack Developer</span>
+              <span class="flip-word" id="title_3" aria-hidden="true">Back-end Developer</span>
+            </h2>
             <span class="accent-line" aria-hidden="true"></span>
 
             <div class="tags reveal" style="--d:.5s">
@@ -118,9 +122,9 @@
             </p>
             <div class="tagsInfo reveal" style="--d:.72s">
               <a class="metal-btn" href="mailto:alejandro6chaves@gmail.com"><i class="fa-solid fa-envelope"></i><span id="tag">alejandro6chaves@gmail.com</span></a>
-              <a class="metal-btn" href="doc/JoseChaves_CV_EN.pdf" download="Jose_Chaves_Ramirez_CV_EN.pdf"><i
+              <a class="metal-btn" href="doc/CV_Jose_Alejandro_Chaves_EN.pdf" download="Jose_Chaves_Ramirez_CV_EN.pdf"><i
                   class="fa-solid fa-file-lines"></i>CV English</a>
-              <a class="metal-btn" href="doc/JoseChaves_CV_ES.pdf" download="Jose_Chaves_Ramirez_CV_ES.pdf"><i
+              <a class="metal-btn" href="doc/CV_Jose_Alejandro_Chaves.pdf" download="Jose_Chaves_Ramirez_CV_ES.pdf"><i
                   class="fa-solid fa-file-lines"></i>CV Español</a>
               <a class="metal-btn metal-icon" href="https://www.linkedin.com/in/jose-alejandro-chaves-ramirez-497839188/" target="_blank" rel="noopener"
                 aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
@@ -133,9 +137,6 @@
           <div class="hero-collage">
             <div class="piece p-main" data-depth="0.05" style="--rot:-1.5deg; --d:.4s">
               <figure class="paper"><img src="img/portada.jpeg" alt="Jose Alejandro Chaves Ramirez" width="1246" height="1280" fetchpriority="high" /></figure>
-            </div>
-            <div class="piece p-char" data-depth="0.1" style="--rot:0deg; --d:.9s">
-              <img src="img/yo90s-Photoroom.png" alt="" aria-hidden="true" />
             </div>
           </div>
         </div>
@@ -232,7 +233,7 @@
           <article class="exp-panel exp-4geeks" role="tabpanel" id="panel-4geeks" aria-labelledby="tab-4geeks" hidden>
             <div class="exp-media">
               <i class="fa-solid fa-desktop exp-media-icon" aria-hidden="true"></i>
-              <img src="img/4geeks.png" class="fit-contain" alt="4Geeks" width="2000" height="1414" loading="lazy" onerror="this.remove()" />
+              <img src="img/4geeks.png" class="fit-contain" alt="4Geeks" width="2000" height="1414" loading="lazy" decoding="async" onerror="this.remove()" />
             </div>
             <div class="exp-body">
               <div class="exp-head">
@@ -246,7 +247,7 @@
           <article class="exp-panel exp-exportpack" role="tabpanel" id="panel-exportpack" aria-labelledby="tab-exportpack" hidden>
             <div class="exp-media">
               <i class="fa-solid fa-seedling exp-media-icon" aria-hidden="true"></i>
-              <img src="img/logoExporpack.jpeg" class="fit-contain" alt="Export Pack" width="627" height="623" loading="lazy" onerror="this.remove()" />
+              <img src="img/logoExporpack.jpeg" class="fit-contain" alt="Export Pack" width="627" height="623" loading="lazy" decoding="async" onerror="this.remove()" />
             </div>
             <div class="exp-body">
               <div class="exp-head">
@@ -286,7 +287,6 @@
                 <li class="proj-item is-active" data-proj="0">
                   <!-- TODO: URL del sitio de Censuma, tecnologías -->
                   <span class="proj-num">01</span>
-                  <span class="proj-kind" id="censuma_kind">SaaS · Knotfix</span>
                   <h4 class="proj-title">Censuma</h4>
                   <p class="proj-text" id="censuma_text">SaaS for workplace climate and satisfaction studies, built on scientific models that turn surveys into quantitative results.</p>
                   <ul class="proj-points">
@@ -298,30 +298,26 @@
                     <button class="proj-thumb" type="button" data-shot="0"><img src="img/projects/censuma-1.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
                     <button class="proj-thumb" type="button" data-shot="1"><img src="img/projects/censuma-2.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
                     <button class="proj-thumb" type="button" data-shot="2"><img src="img/projects/censuma-3.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
-                    <button class="proj-thumb" type="button" data-shot="3"><img src="img/projects/censuma-4.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                    <button class="proj-thumb" type="button" data-shot="3"><img src="img/projects/censuma-4.jpg" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
                   </div>
                 </li>
                 <li class="proj-item" data-proj="1">
-                  <!-- TODO: nombre de la ONG, tecnologías -->
                   <span class="proj-num">02</span>
-                  <span class="proj-kind" id="ong_kind">Custom system · Knotfix</span>
-                  <h4 class="proj-title" id="ong_title">NGO management system</h4>
+                  <h4 class="proj-title">Dale1Mano</h4>
                   <p class="proj-text" id="ong_text">Platform that manages an NGO's finances, donations, payroll and fiscal year in one place.</p>
                   <ul class="proj-points">
                     <li id="ong_p1">Finances and donations</li>
                     <li id="ong_p2">Payroll</li>
                     <li id="ong_p3">Fiscal year closing</li>
+                    <li id="ong_p4">Financial dashboard and alerts</li>
                   </ul>
                   <div class="proj-thumbs">
-                    <button class="proj-thumb" type="button" data-shot="0"><img src="img/projects/ong-1.webp" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
-                    <button class="proj-thumb" type="button" data-shot="1"><img src="img/projects/ong-2.webp" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
-                    <button class="proj-thumb" type="button" data-shot="2"><img src="img/projects/ong-3.webp" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                    <button class="proj-thumb" type="button" data-shot="0"><img src="img/projects/dale1mano-1.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
                   </div>
                 </li>
                 <li class="proj-item" data-proj="2">
                   <!-- TODO: URL de Luck Dream, tecnologías -->
                   <span class="proj-num">03</span>
-                  <span class="proj-kind" id="luckdream_kind">Platform · Knotfix</span>
                   <h4 class="proj-title">Luck Dream</h4>
                   <p class="proj-text" id="luckdream_text">Raffle website where people pick and buy their numbers, with an admin panel to manage buyers.</p>
                   <ul class="proj-points">
@@ -330,14 +326,13 @@
                     <li id="luckdream_p3">Automatic notification emails</li>
                   </ul>
                   <div class="proj-thumbs">
-                    <button class="proj-thumb" type="button" data-shot="0"><img src="img/projects/luckdream-1.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
+                    <button class="proj-thumb" type="button" data-shot="0"><img src="img/projects/luckdream-1.jpg" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
                     <button class="proj-thumb" type="button" data-shot="1"><img src="img/projects/luckdream-2.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
                     <button class="proj-thumb" type="button" data-shot="2"><img src="img/projects/luckdream-3.png" alt="" loading="lazy" onerror="this.parentElement.remove()" /></button>
                   </div>
                 </li>
                 <li class="proj-item" data-proj="3">
                   <span class="proj-num">04</span>
-                  <span class="proj-kind" id="agricola_kind">Internal system · Export Pack</span>
                   <h4 class="proj-title" id="agricola_tittle">Agricultural crop management system</h4>
                   <p class="proj-text" id="agricola_text">This system manages the cultivation and lots of sugarcane and melons, as well as their irrigation and the products they need.</p>
                   <ul class="proj-points">
@@ -363,10 +358,10 @@
                   <div class="proj-bar"><i></i><i></i><i></i><span>censuma</span></div>
                   <button class="proj-screen" type="button" aria-label="Censuma">
                     <i class="proj-ph fa-solid fa-chart-pie" aria-hidden="true"></i>
-                    <img class="is-shown" src="img/projects/censuma-1.png" alt="Censuma – 1" loading="lazy" onerror="this.remove()" />
-                    <img src="img/projects/censuma-2.png" alt="Censuma – 2" loading="lazy" onerror="this.remove()" />
-                    <img src="img/projects/censuma-3.png" alt="Censuma – 3" loading="lazy" onerror="this.remove()" />
-                    <img src="img/projects/censuma-4.png" alt="Censuma – 4" loading="lazy" onerror="this.remove()" />
+                    <img class="is-shown" src="img/projects/censuma-1.png" alt="Censuma – 1" loading="lazy" decoding="async" onerror="this.remove()" />
+                    <img src="img/projects/censuma-2.png" alt="Censuma – 2" loading="lazy" decoding="async" onerror="this.remove()" />
+                    <img src="img/projects/censuma-3.png" alt="Censuma – 3" loading="lazy" decoding="async" onerror="this.remove()" />
+                    <img src="img/projects/censuma-4.jpg" alt="Censuma – 4" loading="lazy" decoding="async" onerror="this.remove()" />
                   </button>
                   <div class="proj-dots">
                     <button class="is-on" type="button" data-shot="0" aria-label="1"></button>
@@ -376,26 +371,22 @@
                   </div>
                 </div>
                 <div class="proj-window" data-proj="1">
-                  <div class="proj-bar"><i></i><i></i><i></i><span>ong</span></div>
-                  <button class="proj-screen" type="button" aria-label="NGO management system">
+                  <div class="proj-bar"><i></i><i></i><i></i><span>dale1mano</span></div>
+                  <button class="proj-screen" type="button" aria-label="Dale1Mano">
                     <i class="proj-ph fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
-                    <img class="is-shown" src="img/projects/ong-1.webp" alt="NGO management system – 1" loading="lazy" onerror="this.remove()" />
-                    <img src="img/projects/ong-2.webp" alt="NGO management system – 2" loading="lazy" onerror="this.remove()" />
-                    <img src="img/projects/ong-3.webp" alt="NGO management system – 3" loading="lazy" onerror="this.remove()" />
+                    <img class="is-shown" src="img/projects/dale1mano-1.png" alt="Dale1Mano – Dashboard" loading="lazy" decoding="async" onerror="this.remove()" />
                   </button>
                   <div class="proj-dots">
                     <button class="is-on" type="button" data-shot="0" aria-label="1"></button>
-                    <button type="button" data-shot="1" aria-label="2"></button>
-                    <button type="button" data-shot="2" aria-label="3"></button>
                   </div>
                 </div>
                 <div class="proj-window" data-proj="2">
                   <div class="proj-bar"><i></i><i></i><i></i><span>luckdream</span></div>
                   <button class="proj-screen" type="button" aria-label="Luck Dream">
                     <i class="proj-ph fa-solid fa-ticket" aria-hidden="true"></i>
-                    <img class="is-shown" src="img/projects/luckdream-1.png" alt="Luck Dream – 1" loading="lazy" onerror="this.remove()" />
-                    <img src="img/projects/luckdream-2.png" alt="Luck Dream – 2" loading="lazy" onerror="this.remove()" />
-                    <img src="img/projects/luckdream-3.png" alt="Luck Dream – 3" loading="lazy" onerror="this.remove()" />
+                    <img class="is-shown" src="img/projects/luckdream-1.jpg" alt="Luck Dream – 1" loading="lazy" decoding="async" onerror="this.remove()" />
+                    <img src="img/projects/luckdream-2.png" alt="Luck Dream – 2" loading="lazy" decoding="async" onerror="this.remove()" />
+                    <img src="img/projects/luckdream-3.png" alt="Luck Dream – 3" loading="lazy" decoding="async" onerror="this.remove()" />
                   </button>
                   <div class="proj-dots">
                     <button class="is-on" type="button" data-shot="0" aria-label="1"></button>
@@ -407,8 +398,8 @@
                   <div class="proj-bar"><i></i><i></i><i></i><span>crop-management</span></div>
                   <button class="proj-screen" type="button" aria-label="Agricultural crop management system">
                     <i class="proj-ph fa-solid fa-seedling" aria-hidden="true"></i>
-                    <img class="is-shown" src="img/loginExp.png" alt="Agricultural crop management system – 1" loading="lazy" onerror="this.remove()" />
-                    <img src="img/menuEpo.png" alt="Agricultural crop management system – 2" loading="lazy" onerror="this.remove()" />
+                    <img class="is-shown" src="img/loginExp.png" alt="Agricultural crop management system – 1" loading="lazy" decoding="async" onerror="this.remove()" />
+                    <img src="img/menuEpo.png" alt="Agricultural crop management system – 2" loading="lazy" decoding="async" onerror="this.remove()" />
                   </button>
                   <div class="proj-dots">
                     <button class="is-on" type="button" data-shot="0" aria-label="1"></button>
@@ -423,14 +414,14 @@
                 <a class="site-card" href="https://magicplacesantateresa.com/" target="_blank" rel="noopener">
                   <div class="site-frame">
                     <div class="proj-bar"><i></i><i></i><i></i><span>magicplace</span></div>
-                    <div class="site-shot"><i class="proj-ph fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><img src="img/magicplace.png" alt="Magic Place" loading="lazy" onerror="this.remove()" /></div>
+                    <div class="site-shot"><i class="proj-ph fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><img src="img/magicplace.jpg" alt="Magic Place" loading="lazy" decoding="async" onerror="this.remove()" /></div>
                   </div>
                   <div class="site-info"><b>Magic Place</b><span id="magicplace_kind">Website</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
                 </a>
                 <a class="site-card" href="https://studio27byvicente.com/" target="_blank" rel="noopener">
                   <div class="site-frame">
                     <div class="proj-bar"><i></i><i></i><i></i><span>studio27</span></div>
-                    <div class="site-shot"><i class="proj-ph fa-solid fa-camera" aria-hidden="true"></i><img src="img/studio27.png" alt="Studio 27" loading="lazy" onerror="this.remove()" /></div>
+                    <div class="site-shot"><i class="proj-ph fa-solid fa-camera" aria-hidden="true"></i><img src="img/studio27.png" alt="Studio 27" loading="lazy" decoding="async" onerror="this.remove()" /></div>
                   </div>
                   <div class="site-info"><b>Studio 27</b><span id="studio27_kind">Website</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div>
                 </a>
@@ -449,93 +440,122 @@
           <div class="experience-content">
             <div class="section-head">
               <span class="section-num" aria-hidden="true">04</span>
-              <h3 class="subtittle" id="section_studies">Studies</h3>
+              <h3 class="subtittle" id="section_studies">Education</h3>
             </div>
-            <div class="studyCard-collection">
-              <a class="study-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz"
-                target="_blank" style="text-decoration: none; color: inherit;">
-                <p class="cero-mg years" id="study_highschool_years">2022</p>
-                <h4 class="cero-mg" id="study_highschool_level">High School</h4>
-                <p class="cero-mg" id="study_highschool_title">Technician in Business Informatics</p>
+            <div class="edu-bento">
+              <a class="edu-card edu-card--main" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz" target="_blank" rel="noopener">
+                <span class="edu-year" id="study_university_years">2022-2025</span>
+                <h4 class="edu-title" id="study_university_title">Systems Engineer</h4>
+                <span class="edu-meta"><span class="edu-tag" id="study_university_level">University</span><span class="edu-inst" id="study_university_institution">National University</span></span>
+                <i class="edu-go fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
               </a>
-              <a class="study-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz"
-                target="_blank" style="text-decoration: none; color: inherit;">
-                <p class="cero-mg years" id="study_university_years">2022-2025</p>
-                <h4 class="cero-mg" id="study_university_level">University</h4>
-                <p class="institution cero-mg" id="study_university_institution">National University</p>
-                <p class="cero-mg" id="study_university_title">Systems Engineer</p>
+              <a class="edu-card edu-card--wide" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz" target="_blank" rel="noopener">
+                <span class="edu-year" id="study_highschool_years">2022</span>
+                <h4 class="edu-title" id="study_highschool_title">Technician in Business Informatics</h4>
+                <span class="edu-meta"><span class="edu-tag" id="study_highschool_level">High School</span></span>
+                <i class="edu-go fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
               </a>
-            </div>
-
-            <h3 class="subtittle subtittle-sm" id="section_certifications">Certifications</h3>
-
-            <div class="studyCard-collection">
-              <a class="study-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz"
-                target="_blank" style="text-decoration: none; color: inherit;">
-                <p class="cero-mg years" id="certification_occupational_year">2020</p>
-                <h4 class="cero-mg" id="certification_occupational_type">Course</h4>
-                <p class="cero-mg" id="certification_occupational_name">Occupational Health</p>
+              <a class="edu-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz" target="_blank" rel="noopener">
+                <span class="edu-year" id="certification_scrum_year">2025</span>
+                <h4 class="edu-title" id="certification_scrum_name">Scrum Fundamentals</h4>
+                <span class="edu-meta"><span class="edu-tag" id="certification_scrum_type">Course</span></span>
+                <i class="edu-go fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
               </a>
-              <a class="study-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz"
-                target="_blank" style="text-decoration: none; color: inherit;">
-                <p class="cero-mg years" id="certification_itoperator_year">2020</p>
-                <h4 class="cero-mg" id="certification_itoperator_type">Course</h4>
-                <p class="cero-mg" id="certification_itoperator_name">Information Technology Operator</p>
+              <a class="edu-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz" target="_blank" rel="noopener">
+                <span class="edu-year" id="certification_itessentials_year">2020</span>
+                <h4 class="edu-title" id="certification_itessentials_name">IT Essentials: PC Hardware and Software</h4>
+                <span class="edu-meta"><span class="edu-tag" id="certification_itessentials_type">Course</span></span>
+                <i class="edu-go fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
               </a>
-              <a class="study-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz"
-                target="_blank" style="text-decoration: none; color: inherit;">
-                <p class="cero-mg years" id="certification_itessentials_year">2020</p>
-                <h4 class="cero-mg" id="certification_itessentials_type">Course</h4>
-                <p class="cero-mg" id="certification_itessentials_name">IT Essentials: PC Hardware and Software</p>
+              <a class="edu-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz" target="_blank" rel="noopener">
+                <span class="edu-year" id="certification_itoperator_year">2020</span>
+                <h4 class="edu-title" id="certification_itoperator_name">Information Technology Operator</h4>
+                <span class="edu-meta"><span class="edu-tag" id="certification_itoperator_type">Course</span></span>
+                <i class="edu-go fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
               </a>
-              <a class="study-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz"
-                target="_blank" style="text-decoration: none; color: inherit;">
-                <p class="cero-mg years" id="certification_scrum_year">2025</p>
-                <h4 class="cero-mg" id="certification_scrum_type">Course</h4>
-                <p class="cero-mg" id="certification_scrum_name">Scrum Fundamentals</p>
+              <a class="edu-card" href="https://drive.google.com/drive/u/1/folders/11JEYyxw2k6o2O8-zv9RNXzeSW46cbTDz" target="_blank" rel="noopener">
+                <span class="edu-year" id="certification_occupational_year">2020</span>
+                <h4 class="edu-title" id="certification_occupational_name">Occupational Health</h4>
+                <span class="edu-meta"><span class="edu-tag" id="certification_occupational_type">Course</span></span>
+                <i class="edu-go fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
               </a>
             </div>
           </div>
         </section>
+        <section class="section experience-wrapper research">
+          <div class="experience-content">
+            <div class="section-head">
+              <span class="section-num" aria-hidden="true">05</span>
+              <h3 class="subtittle" id="section_research">Research</h3>
+            </div>
+            <article class="pub">
+              <a class="pub-cover" href="https://dialnet.unirioja.es/servlet/articulo?codigo=10945245" target="_blank" rel="noopener" aria-label="Dialnet">
+                <span class="pub-sheet">
+                  <span class="pub-sheet-top">COMPDES 2025</span>
+                  <i class="fa-solid fa-server" aria-hidden="true"></i>
+                  <span class="pub-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+                  <span class="pub-sheet-foot">pp. 17&ndash;22</span>
+                </span>
+              </a>
+              <div class="pub-body">
+                <h4 class="pub-title" lang="es">Impacto ambiental de los centros de datos: consumo energético, residuos y sostenibilidad</h4>
+                <ul class="pub-topics">
+                  <li id="paper_t1">Artificial intelligence</li>
+                  <li id="paper_t2">Data centers</li>
+                  <li id="paper_t3">Energy efficiency</li>
+                  <li id="paper_t4">Circular economy</li>
+                </ul>
+                <p class="pub-authors">Daniel González Picado · Josué David Solórzano Ordoñez · Randy Felipe Villarreal Fallas · <b>José Alejandro Chaves Ramírez</b></p>
+                <p class="pub-venue" id="paper_venue">Proceedings of the 18th Ibero-American Congress on Computing for Development (COMPDES 2025), Quetzaltenango · Editorial Universidad de Alcalá, 2026 · pp. 17–22</p>
+                <div class="pub-actions">
+                  <a class="pub-btn" href="https://dialnet.unirioja.es/servlet/articulo?codigo=10945245" target="_blank" rel="noopener"><i class="fa-solid fa-book-open"></i><span id="paper_read">Read on Dialnet</span></a>
+                  <a class="pub-btn pub-btn--ghost" href="https://dialnet.unirioja.es/servlet/libro?codigo=1034238" target="_blank" rel="noopener"><i class="fa-solid fa-book"></i><span id="paper_book">Full proceedings</span></a>
+                  <span class="pub-isbn">ISBN 979-13-88138-54-6</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="section experience-wrapper about">
+          <div class="experience-content">
+            <div class="section-head">
+              <span class="section-num" aria-hidden="true">06</span>
+              <h3 class="subtittle" id="section_me">A little about me</h3>
+            </div>
+            <p class="about-text" id="text_me">Hi, I'm Alejandro. I'm very outgoing and curious about learning different skills. I like to stay organized. I consider myself a good communicator. My main hobbies are exercising, photography, and philosophy.</p>
+          </div>
+        </section>
       </div>
     </main>
-    <footer style="width: 100%;">
-      <div class="background-end">
-        <div class="Me section">
-          <div class="section-head">
-            <span class="section-num" aria-hidden="true">05</span>
-            <h3 class="subtittle" id="section_me">A little about me</h3>
-          </div>
-          <div class="me-content">
-            <p class="text_me phone-text" id="text_me">Hi, I'm Alejandro. I'm very outgoing and curious about learning
-              different skills. I like to stay organized. I consider myself a good communicator. My main hobbies are
-              exercising, photography, and philosophy.</p>
-            <div class="me-img">
-              <img class="yo-img" src="img/yo90s-Photoroom.png" />
-              <div class="shadow-circle"></div>
+    <footer class="reveal-footer" id="contact">
+      <div class="rf-inner">
+        <span class="rf-bigtext" id="footer_big" aria-hidden="true">Let's talk</span>
+        <div class="rf-content">
+          <div class="rf-grid">
+            <div class="rf-col">
+              <h4 class="rf-title" id="footer_contact_title">Contact</h4>
+              <a class="rf-link" href="mailto:alejandro6chaves@gmail.com"><i class="fa-solid fa-envelope"></i>alejandro6chaves@gmail.com</a>
+              <a class="rf-link" href="tel:+50688632654" id="footer_phone"><i class="fa-solid fa-phone"></i>+506 8863 2654</a>
+              <div class="rf-social">
+                <a href="https://github.com/alendroc" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jose-alejandro-chaves-ramirez-497839188/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/alejaaan_/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="rf-col">
+              <h4 class="rf-title" id="footer_residence_title">Residence</h4>
+              <p class="rf-place"><i class="fa-solid fa-location-dot"></i>Alajuela, Alajuela, Costa Rica</p>
+              <p class="rf-text" id="footer_residence_extra">Willing to move anywhere, I try to ensure that the workplace is not a limitation for my professional training, which is why I have a car and motorcycle license.</p>
             </div>
           </div>
+          <figure class="rf-avatar">
+            <img src="img/yo90s-Photoroom.png" alt="Alejandro, 90s style illustration" loading="lazy" decoding="async" />
+            <span class="rf-shadow" aria-hidden="true"></span>
+          </figure>
         </div>
-      </div>
-      <div class="footer-last">
-        <div class="Me extra" style="border-top: 1px solid white;">
-          <div class="home" id="contact">
-            <h4 class="footer-tittle" id="footer_residence_title" style="border: none;">Residence</h4>
-            <p><i class="fas fa-home" style="margin-right: 4px;"></i> Alajuela, Alajuela, Costa Rica</p>
-            <p id="footer_residence_extra">Willing to move anywhere, I try to ensure that the workplace is not a
-              limitation for my professional training, which is why I have a car and motorcycle license.</p>
-          </div>
-          <div class="contact" style="width: 100%;">
-            <h4 class="footer-tittle" style="border: none;" id="footer_contact_title">Contact</h4>
-            <p class="phone-text"><i class="fas fa-envelope mr-3"></i> alejandro6chaves@gmail.com</p>
-            <p id="footer_phone"><i class="fas fa-phone mr-3"></i> + 506 8863 2654</p>
-            <div class="tagsInfo social-media ">
-              <a href="https://github.com/alendroc" target="_blank"><i class="fa-brands fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/jose-alejandro-chaves-ramirez-497839188/" target="_blank"><i
-                  class="fa-brands fa-linkedin"></i></a>
-              <a href="https://www.instagram.com/alejaaan_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-          </div>
+        <div class="rf-bottom">
+          <small>© 2026 · Jose Alejandro Chaves Ramirez</small>
+          <a class="rf-top" href="#home"><span id="footer_top">Back to top</span><i class="fa-solid fa-arrow-up"></i></a>
         </div>
       </div>
     </footer>

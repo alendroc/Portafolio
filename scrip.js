@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // En teléfonos se usa una escala menor para que quepa más contenido
     const scale = window.innerWidth <= 800 ? 1.2 : 1.8;
 
+    // El ancho máximo del contenido se expresa en px reales de pantalla (ver --container en styles.css)
+    if (isIOS || isAndroid || isWindows) document.documentElement.style.setProperty('--zoom', scale);
+
     if (isIOS) {
       scaledContainer.style.setProperty("--ui-scale", scale);
       scaledContainer.classList.add("use-scale");
@@ -44,6 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
 const translationMap = [
   ['name', 'name'],
   ['title', 'title'],
+  ['title_2', 'title_2'],
+  ['title_3', 'title_3'],
   ['tag1', 'tag1'],
   ['tag2', 'tag2'],
   ['description', 'description'],
@@ -76,23 +81,19 @@ const translationMap = [
   ['exp_4geeks_period', 'exp_4geeks_period'],
   ['agricola_tittle', 'agricola_title'],
   ['agricola_text', 'agricola_text'],
-  ['censuma_kind', 'censuma_kind'],
   ['censuma_text', 'censuma_text'],
   ['censuma_p1', 'censuma_p1'],
   ['censuma_p2', 'censuma_p2'],
   ['censuma_p3', 'censuma_p3'],
-  ['ong_kind', 'ong_kind'],
-  ['ong_title', 'ong_title'],
+  ['ong_p4', 'ong_p4'],
   ['ong_text', 'ong_text'],
   ['ong_p1', 'ong_p1'],
   ['ong_p2', 'ong_p2'],
   ['ong_p3', 'ong_p3'],
-  ['luckdream_kind', 'luckdream_kind'],
   ['luckdream_text', 'luckdream_text'],
   ['luckdream_p1', 'luckdream_p1'],
   ['luckdream_p2', 'luckdream_p2'],
   ['luckdream_p3', 'luckdream_p3'],
-  ['agricola_kind', 'agricola_kind'],
   ['agricola_p1', 'agricola_p1'],
   ['agricola_p2', 'agricola_p2'],
   ['agricola_p3', 'agricola_p3'],
@@ -119,11 +120,21 @@ const translationMap = [
   ['certification_itessentials_name', 'certification_itessentials_name'],
   ['certification_scrum_type', 'certification_scrum_type'],
   ['certification_scrum_name', 'certification_scrum_name'],
+  ['section_research', 'section_research'],
+  ['paper_t1', 'paper_t1'],
+  ['paper_t2', 'paper_t2'],
+  ['paper_t3', 'paper_t3'],
+  ['paper_t4', 'paper_t4'],
+  ['paper_venue', 'paper_venue'],
+  ['paper_read', 'paper_read'],
+  ['paper_book', 'paper_book'],
   ['section_me', 'section_me'],
   ['text_me', 'text_me'],
   ['footer_residence_title', 'footer_residence_title'],
   ['footer_residence_extra', 'footer_residence_extra'],
-  ['footer_contact_title', 'footer_contact_title']
+  ['footer_contact_title', 'footer_contact_title'],
+  ['footer_big', 'footer_big'],
+  ['footer_top', 'footer_top']
 ];
 
 let translationsPromise = null;
@@ -144,6 +155,8 @@ async function loadLanguage(lang) {
     });
     document.documentElement.lang = lang;
     document.body.classList.remove('lang-switching');
+    // Avisa a los efectos que dependen del texto (palabras reveladas, globo del footer)
+    document.dispatchEvent(new Event('langchange'));
   }, 120);
 
   try { localStorage.setItem('lang', lang); } catch (e) {}
@@ -608,6 +621,7 @@ if (lenis) {
   let active = 0;
   let timer = null;
   let inView = false;
+  let hovering = false;
 
   const showShot = (win, index) => {
     // Las capturas que no existen se quitan solas (onerror), así que se cuentan las que quedan
@@ -616,7 +630,11 @@ if (lenis) {
     dots.forEach((dot, n) => { dot.hidden = imgs.length < 2 || n >= imgs.length; });
     if (!imgs.length) return;
     const i = (index + imgs.length) % imgs.length;
-    imgs.forEach((img, n) => img.classList.toggle('is-shown', n === i));
+    // La captura anterior queda debajo mientras la nueva entra, así no se ve el fondo entre ambas
+    imgs.forEach((img, n) => {
+      img.classList.toggle('is-prev', n !== i && img.classList.contains('is-shown'));
+      img.classList.toggle('is-shown', n === i);
+    });
     dots.forEach((dot, n) => dot.classList.toggle('is-on', n === i));
     win.dataset.shot = i;
   };
@@ -624,7 +642,7 @@ if (lenis) {
   // Las capturas de la ventana activa rotan solas mientras la sección está en pantalla
   const restartTimer = () => {
     clearInterval(timer);
-    if (reduce || !inView) return;
+    if (reduce || !inView || hovering) return;
     timer = setInterval(() => {
       const win = windows[active];
       showShot(win, Number(win.dataset.shot || 0) + 1);
@@ -635,7 +653,11 @@ if (lenis) {
     if (index === active) return;
     active = index;
     items.forEach((item, i) => item.classList.toggle('is-active', i === active));
-    windows.forEach((win, i) => win.classList.toggle('is-active', i === active));
+    // Las ventanas anteriores esperan arriba y las siguientes abajo: la transición sigue la dirección del scroll
+    windows.forEach((win, i) => {
+      win.classList.toggle('is-active', i === active);
+      win.classList.toggle('is-before', i < active);
+    });
     list.style.setProperty('--prog', items.length > 1 ? (active / (items.length - 1)).toFixed(3) : 1);
     showShot(windows[active], Number(windows[active].dataset.shot || 0));
     restartTimer();
@@ -643,8 +665,10 @@ if (lenis) {
 
   window.addEventListener('load', () => windows.forEach(win => showShot(win, 0)));
 
-  // El proyecto activo es el último cuyo nombre ya cruzó la mitad de la pantalla
+  // El proyecto activo es el último cuyo nombre ya cruzó la mitad de la pantalla;
+  // el margen evita que cambie de ida y vuelta cuando un nombre queda justo en el borde
   const titles = items.map(item => item.querySelector('.proj-title'));
+  const margin = 40;
   let ticking = false;
   const pickActive = () => {
     ticking = false;
@@ -652,7 +676,7 @@ if (lenis) {
     let next = 0;
     titles.forEach((title, i) => {
       const r = title.getBoundingClientRect();
-      if ((r.top + r.bottom) / 2 <= mid) next = i;
+      if ((r.top + r.bottom) / 2 <= mid + (i <= active ? margin : -margin)) next = i;
     });
     setActive(next);
   };
@@ -661,7 +685,8 @@ if (lenis) {
     ticking = true;
     requestAnimationFrame(pickActive);
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
+  if (lenis) lenis.on('scroll', onScroll);
+  else window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   pickActive();
 
@@ -669,6 +694,14 @@ if (lenis) {
     inView = entry.isIntersecting;
     restartTimer();
   }).observe(showcase);
+
+  // Antes de llegar a la sección se cargan todas las capturas, así cambiar de proyecto no muestra el placeholder
+  const preload = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    showcase.querySelectorAll('.proj-screen img').forEach(img => { img.loading = 'eager'; });
+    preload.disconnect();
+  }, { rootMargin: '800px 0px' });
+  preload.observe(showcase);
 
   // Clic en un proyecto de la lista lleva su nombre al centro de la pantalla (justo donde se activa)
   items.forEach((item, i) => {
@@ -681,6 +714,9 @@ if (lenis) {
   });
 
   windows.forEach(win => {
+    // La rotación automática se pausa mientras el mouse está sobre la ventana
+    win.addEventListener('mouseenter', () => { hovering = true; clearInterval(timer); });
+    win.addEventListener('mouseleave', () => { hovering = false; restartTimer(); });
     win.querySelectorAll('.proj-dots button').forEach(dot => {
       dot.addEventListener('click', () => { showShot(win, Number(dot.dataset.shot)); restartTimer(); });
     });
@@ -743,6 +779,7 @@ if (lenis) {
   const hero = document.querySelector('.hero');
   const heroInner = hero && hero.querySelector('.hero-inner');
   const root = document.documentElement;
+  const footer = document.querySelector('.reveal-footer');
   const visible = new Set(sections);
   const clamp = v => Math.min(1, Math.max(0, v));
   let ticking = false;
@@ -763,6 +800,13 @@ if (lenis) {
       heroInner.style.opacity = (1 - h * 0.85).toFixed(3);
       heroInner.style.scale = (1 - h * 0.05).toFixed(4);
     }
+    // Cuánto del footer ya quedó descubierto (0 = oculto bajo el contenido, 1 = completo)
+    if (footer) {
+      const r = footer.getBoundingClientRect();
+      const f = clamp((vh - r.top) / (r.height || 1));
+      footer.style.setProperty('--f', f.toFixed(3));
+      footer.classList.toggle('is-in', f > 0.92);
+    }
   };
   const request = () => {
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
@@ -782,4 +826,97 @@ if (lenis) {
   else window.addEventListener('scroll', request, { passive: true });
   window.addEventListener('resize', request);
   request();
+})();
+
+// Botones magnéticos del hero: se inclinan unos px hacia el cursor
+(function initMagnetic() {
+  if (!window.matchMedia('(hover: hover)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.hero .metal-btn').forEach(btn => {
+    btn.addEventListener('pointermove', e => {
+      const r = btn.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width - 0.5) * 8;
+      const y = ((e.clientY - r.top) / r.height - 0.5) * 6;
+      btn.style.translate = `${x.toFixed(1)}px ${y.toFixed(1)}px`;
+    });
+    btn.addEventListener('pointerleave', () => { btn.style.translate = ''; });
+  });
+})();
+
+// Título del hero: rota entre roles
+(function initFlipWords() {
+  const words = Array.from(document.querySelectorAll('.flip-word'));
+  if (words.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const box = words[0].parentElement;
+  let i = 0;
+  setInterval(() => {
+    if (document.hidden) return;
+    // Se fija el alto actual y se anima hacia el de la palabra nueva (algunas ocupan dos líneas)
+    box.style.height = box.offsetHeight + 'px';
+    words[i].classList.remove('is-on');
+    words[i].classList.add('is-off');
+    words[i].setAttribute('aria-hidden', 'true');
+    const prev = words[i];
+    setTimeout(() => prev.classList.remove('is-off'), 700);
+    i = (i + 1) % words.length;
+    words[i].classList.add('is-on');
+    words[i].removeAttribute('aria-hidden');
+    requestAnimationFrame(() => { box.style.height = words[i].offsetHeight + 'px'; });
+    setTimeout(() => { box.style.height = ''; }, 700);
+  }, 2800);
+})();
+
+// "Sobre mí": las palabras se iluminan a medida que el texto sube por la pantalla
+(function initTextReveal() {
+  const el = document.getElementById('text_me');
+  if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let spans = [];
+  const split = () => {
+    const words = el.textContent.trim().split(/\s+/);
+    el.textContent = '';
+    spans = words.map((w, n) => {
+      const span = document.createElement('span');
+      span.className = 'tr-word';
+      span.textContent = w;
+      el.appendChild(span);
+      if (n < words.length - 1) el.appendChild(document.createTextNode(' '));
+      return span;
+    });
+    update();
+  };
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const r = el.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (vh * 0.5)));
+    const n = spans.length;
+    spans.forEach((span, k) => {
+      span.style.opacity = Math.min(1, Math.max(0.15, p * n * 1.15 - k)).toFixed(2);
+    });
+  };
+  const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+  split();
+  document.addEventListener('langchange', split);
+  if (lenis) lenis.on('scroll', request);
+  else window.addEventListener('scroll', request, { passive: true });
+  window.addEventListener('resize', request);
+})();
+
+// Footer: el avatar se inclina levemente siguiendo el mouse
+(function initFooterAvatar() {
+  const footer = document.querySelector('.reveal-footer');
+  const avatar = footer && footer.querySelector('.rf-avatar');
+  if (!avatar) return;
+  // Con reduced motion no hay parallax que marque .is-in, así que se muestra completo desde el inicio
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    footer.classList.add('is-in');
+    return;
+  }
+  if (!window.matchMedia('(hover: hover)').matches) return;
+  footer.addEventListener('pointermove', e => {
+    const r = avatar.getBoundingClientRect();
+    const x = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / 300));
+    avatar.style.setProperty('--tilt', (x * 4).toFixed(2) + 'deg');
+  });
+  footer.addEventListener('pointerleave', () => avatar.style.setProperty('--tilt', '0deg'));
 })();
