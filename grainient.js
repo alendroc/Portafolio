@@ -208,17 +208,18 @@ void main() {
     return [(n >> 16 & 255) / 255, (n >> 8 & 255) / 255, (n & 255) / 255];
   };
 
+  // La compilación se divide en dos fases: linkBegin() la lanza (asíncrona en la GPU)
+  // y linkFinish() consulta el resultado. Consultar el estado antes de que termine
+  // bloquea el hilo principal (cientos de ms en Windows/ANGLE).
   const compile = (gl, type, source) => {
     const shader = gl.createShader(type);
     if (!shader) return null;
     gl.shaderSource(shader, source);
     gl.compileShader(shader);
-    if (gl.getShaderParameter(shader, gl.COMPILE_STATUS)) return shader;
-    gl.deleteShader(shader);
-    return null;
+    return shader;
   };
 
-  const link = (gl, fragmentSource) => {
+  const linkBegin = (gl, fragmentSource) => {
     const vertex = compile(gl, gl.VERTEX_SHADER, VERTEX);
     const fragment = compile(gl, gl.FRAGMENT_SHADER, fragmentSource);
     const program = gl.createProgram();
@@ -226,9 +227,16 @@ void main() {
     gl.attachShader(program, vertex);
     gl.attachShader(program, fragment);
     gl.linkProgram(program);
+    return { program, vertex, fragment };
+  };
+
+  const linkFinish = (gl, pending) => {
+    if (!pending) return null;
+    const { program, vertex, fragment } = pending;
+    const ok = gl.getProgramParameter(program, gl.LINK_STATUS);
     gl.deleteShader(vertex);
     gl.deleteShader(fragment);
-    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    if (!ok) {
       gl.deleteProgram(program);
       return null;
     }
@@ -248,14 +256,16 @@ void main() {
   canvas.style.cssText = 'position:absolute;inset:0;display:block;width:100%;height:100%;';
   const gl = canvas.getContext('webgl2', { alpha: false, antialias: false, depth: false, stencil: false });
   if (!gl) return;
+  // Sin GPU (WebGL por software) el shader cuesta segundos de CPU: se queda el fondo CSS.
+  const dbg = gl.getExtension('WEBGL_debug_renderer_info');
+  const renderer = dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : '';
+  if (/swiftshader|llvmpipe|software|basic render/i.test(renderer)) return;
 
-  const field = link(gl, FIELD);
-  const composite = link(gl, COMPOSITE);
-  if (!field || !composite) return;
-  container.appendChild(canvas);
-
-  const fu = field.uniforms;
-  const cu = composite.uniforms;
+  // Se asignan en start(), cuando los shaders terminan de compilar.
+  let field = null;
+  let composite = null;
+  let fu = null;
+  let cu = null;
   const vao = gl.createVertexArray();
   const target = gl.createTexture();
   gl.bindTexture(gl.TEXTURE_2D, target);
@@ -323,7 +333,7 @@ void main() {
   };
 
   const wake = () => {
-    if (!raf && visible && !document.hidden) raf = requestAnimationFrame(frame);
+    if (field && !raf && visible && !document.hidden) raf = requestAnimationFrame(frame);
   };
 
   const resize = () => {
@@ -393,9 +403,17 @@ void main() {
     }
   };
 
+  // Sin interacción el gradiente se mueve lento: 30 fps bastan y ahorran ~50% de GPU/CPU.
+  const IDLE_FRAME_MS = 1000 / 30;
+
   function frame(now) {
     raf = 0;
     if (!visible || document.hidden) return;
+    const interacting = introClock < 1 || trail.length > 0 || spins.length > 0;
+    if (!interacting && last && now - last < IDLE_FRAME_MS - 1) {
+      raf = requestAnimationFrame(frame);
+      return;
+    }
     const dt = last ? clamp((now - last) / 1000, 0.001, 0.05) : 1 / 60;
     last = now;
     if (!reduce) time += dt * SPEED * 0.16;
@@ -446,11 +464,32 @@ void main() {
   document.documentElement.addEventListener('pointerleave', () => { pointer.inside = false; });
   document.addEventListener('visibilitychange', () => { last = 0; wake(); });
 
-  new ResizeObserver(resize).observe(container);
-  new IntersectionObserver(entries => {
-    visible = entries.some(entry => entry.isIntersecting);
-    if (visible) { last = 0; wake(); }
-  }).observe(container);
-
-  resize();
+  // Arranca cuando la página ya cargó y el hilo principal está libre,
+  // para no competir con el primer render (FCP/LCP).
+  const parallel = gl.getExtension('KHR_parallel_shader_compile');
+  const start = () => {
+    const pending = [linkBegin(gl, FIELD), linkBegin(gl, COMPOSITE)];
+    const done = () => !parallel || pending.every(p => !p ||
+      gl.getProgramParameter(p.program, parallel.COMPLETION_STATUS_KHR));
+    const poll = () => {
+      if (!done()) { setTimeout(poll, 50); return; }
+      field = linkFinish(gl, pending[0]);
+      composite = linkFinish(gl, pending[1]);
+      if (!field || !composite) return;
+      fu = field.uniforms;
+      cu = composite.uniforms;
+      container.appendChild(canvas);
+      new ResizeObserver(resize).observe(container);
+      new IntersectionObserver(entries => {
+        visible = entries.some(entry => entry.isIntersecting);
+        if (visible) { last = 0; wake(); }
+      }).observe(container);
+      resize();
+    };
+    poll();
+  };
+  const idle = window.requestIdleCallback || (cb => setTimeout(cb, 200));
+  const boot = () => idle(start, { timeout: 1500 });
+  if (document.readyState === 'complete') boot();
+  else window.addEventListener('load', boot, { once: true });
 })();

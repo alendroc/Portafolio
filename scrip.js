@@ -233,8 +233,10 @@ document.addEventListener('click', function() {
 // Pastilla deslizante en hover (estilo Animate UI)
 function attachPill(container, itemSelector) {
   if (!container) return;
-  const pill = document.createElement('span');
+  // Dentro de una lista debe ser <li> (accesibilidad); es solo decorativo.
+  const pill = document.createElement(container.matches('ul, ol') ? 'li' : 'span');
   pill.className = 'nav-pill';
+  pill.setAttribute('aria-hidden', 'true');
   container.prepend(pill);
 
   const moveTo = item => {

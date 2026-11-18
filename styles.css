@@ -15,6 +15,31 @@
   --accent-2: #f0b48a;
   --bg: #060609;
 }
+/* ===== Reset base (sustituye el "reboot" de Bootstrap, que ya no se carga) ===== */
+*,*::before,*::after{ box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference){ :root{ scroll-behavior: smooth; } }
+body{ font-size: 1rem; line-height: 1.5; color: #212529; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+h1,h2,h3,h4,h5,h6{ margin-top: 0; margin-bottom: .5rem; font-weight: 500; line-height: 1.2; }
+h2{ font-size: calc(1.325rem + .9vw); }
+h3{ font-size: calc(1.3rem + .6vw); }
+h4{ font-size: calc(1.275rem + .3vw); }
+@media (min-width: 1200px){ h2{ font-size: 2rem; } h3{ font-size: 1.75rem; } h4{ font-size: 1.5rem; } }
+p{ margin-top: 0; margin-bottom: 1rem; }
+ol,ul{ padding-left: 2rem; margin-top: 0; margin-bottom: 1rem; }
+ul.dropdown{ margin: 0; padding: 0; }
+b,strong{ font-weight: bolder; }
+small{ font-size: .875em; }
+a{ color: #0d6efd; text-decoration: underline; }
+a:hover{ color: #0a58ca; }
+figure{ margin: 0 0 1rem; }
+img,svg{ vertical-align: middle; }
+img{ height: auto; }
+button{ border-radius: 0; margin: 0; font-family: inherit; font-size: inherit; line-height: inherit; text-transform: none; }
+button:not(:disabled){ cursor: pointer; }
+[hidden]{ display: none !important; }
+/* Íconos SVG (sustituyen la fuente de Font Awesome) */
+.fa-solid,.fa-brands{ display: inline-block; font-style: normal; line-height: 1; }
+.ic{ height: 1em; width: auto; fill: currentColor; vertical-align: -.125em; overflow: visible; }
 body {
     margin: 0  !important;;
     padding: 0  !important;
@@ -416,7 +441,13 @@ nav{
     pointer-events: none;
   }
   .hero-bg{
-    position: absolute; inset: 0; pointer-events: none; background: #060609;
+    position: absolute; inset: 0; pointer-events: none;
+    /* Respaldo estático con la paleta del shader (grainient.js lo cubre cuando hay GPU) */
+    background:
+      radial-gradient(55% 65% at 85% 90%, #923e0e70, transparent 70%),
+      radial-gradient(35% 40% at 95% 100%, #e9b38a40, transparent 70%),
+      radial-gradient(70% 80% at 15% 15%, #1b3f5e90, transparent 70%),
+      linear-gradient(145deg, #060609, #0a1624 55%, #060609);
     -webkit-mask-image: linear-gradient(#000 70%, transparent);
     mask-image: linear-gradient(#000 70%, transparent);
   }
@@ -1542,7 +1573,7 @@ header{ background: none; }
 .proj-screen img.is-shown{ z-index: 2; opacity: 1; scale: 1; }
 .proj-screen img.is-prev{ z-index: 1; opacity: 1; scale: 1; transition: none; }
 .proj-screen::after{
-  content: "\f00e";
+  content: "";
   position: absolute;
   z-index: 3;
   right: 10px;
@@ -1552,9 +1583,7 @@ header{ background: none; }
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  font: 900 10px "Font Awesome 6 Free";
-  color: #fff;
-  background: #0009;
+  background: #0009 url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20512%20512'%3E%3Cpath%20fill%3D'white'%20d%3D'M416%20208c0%2045.9-14.9%2088.3-40%20122.7L502.6%20457.4c12.5%2012.5%2012.5%2032.8%200%2045.3s-32.8%2012.5-45.3%200L330.7%20376c-34.4%2025.2-76.8%2040-122.7%2040C93.1%20416%200%20322.9%200%20208S93.1%200%20208%200S416%2093.1%20416%20208zM184%20296c0%2013.3%2010.7%2024%2024%2024s24-10.7%2024-24l0-64%2064%200c13.3%200%2024-10.7%2024-24s-10.7-24-24-24l-64%200%200-64c0-13.3-10.7-24-24-24s-24%2010.7-24%2024l0%2064-64%200c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024l64%200%200%2064z'%2F%3E%3C%2Fsvg%3E") center / 10px no-repeat;
   border: 1px solid #ffffff30;
   opacity: 0;
   transition: opacity .3s;
